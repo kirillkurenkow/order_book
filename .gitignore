@@ -3,3 +3,5 @@
 
 # Directiories
 venv
+*reports*
+.pytest_cache
