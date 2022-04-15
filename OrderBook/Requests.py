@@ -121,11 +121,12 @@ class Request:
         """
         return ''
 
-    def __str__(self) -> str:
+    @property
+    def as_dict(self) -> dict:
         """
-        Request string representation
+        Request dict representation
 
-        :return: str: '{'id': ..., 'price': ..., 'volume': ..., 'type': ...}'
+        :return: dict: {'id': ..., 'price': ..., 'volume': ..., 'type': ...}
         """
         result = {
             'id': self.id,
@@ -133,7 +134,10 @@ class Request:
             'volume': self.volume,
             'type': self.type,
         }
-        return str(result)
+        return result
+
+    def __str__(self) -> str:
+        return str(self.as_dict)
 
 
 class AskRequest(Request):

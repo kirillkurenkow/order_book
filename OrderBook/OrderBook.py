@@ -153,13 +153,12 @@ class OrderBook:
 
         :return: Request object
         """
-        LOGGER.debug('Trying to find the request with id "%s" and type "%s"' % (request_id, request_type))
+        LOGGER.debug('Trying to find the request with id "%s"' % request_id)
         self.__check_request_id(request_id)
 
         # If request_type is None - creating a list self._requests['Ask'] + self._requests['Bid']
         if request_type is None:
-            requests_list = [request for request_type, request_list in self._requests.items() for request in
-                             request_list]
+            requests_list = self._requests[RequestTypes.ASK] + self._requests[RequestTypes.BID]
         # Else searching in self._requests[request_type]
         else:
             self.__check_request_type(request_type)
@@ -167,26 +166,26 @@ class OrderBook:
 
         # Searching request
         for request in requests_list:
-            if request_id == request:
+            if request_id == request.id:
                 LOGGER.debug('The request was found successfully')
                 return request
 
-        LOGGER.warning('The request with id "%s" and type "%s" was not found' % (request_id, request_type))
+        LOGGER.warning('The request with id "%s" was not found' % request_id)
 
         # Raising exception if request was not found and raise_if_not_found is True
         if raise_if_not_found:
             raise RequestWasNotFoundError(f'The request with id "{request_id}" was not found.')
 
-    def get_request_info(self, request_id: int, request_type: Optional[str] = None) -> str:
+    def get_request_info(self, request_id: int, request_type: Optional[str] = None) -> dict:
         """
         Method for getting a request info from the requests list
 
         :param request_id: Request id
         :param request_type: Request type
 
-        :return: str(Request object)
+        :return: A dict with request info
         """
-        return str(self._get_request(request_id=request_id, request_type=request_type))
+        return self._get_request(request_id=request_id, request_type=request_type).as_dict
 
     def change_request_info(self, request_id: int, price: Optional[PRICE_TYPE] = None,
                             volume: Optional[int] = None) -> None:
@@ -219,7 +218,7 @@ class OrderBook:
 
         LOGGER.debug('The request info was changed successfully')
 
-    def get_snapshot(self) -> _REQUESTS_LIST_TYPE:
+    def get_snapshot(self) -> dict:
         """
         Method for getting a snapshot of the current requests list
 
@@ -230,8 +229,8 @@ class OrderBook:
 
         # Changing keys to follow the documentation
         result = {
-            'Asks': result[RequestTypes.ASK],
-            'Bids': result[RequestTypes.BID],
+            'Asks': [x.as_dict for x in result[RequestTypes.ASK]],
+            'Bids': [x.as_dict for x in result[RequestTypes.BID]],
         }
         LOGGER.debug('A new snapshot was created: %s' % result)
         return result
