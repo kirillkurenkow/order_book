@@ -3,6 +3,8 @@ from typing import (
     Dict,
     List,
     Optional,
+    Union,
+    Tuple,
 )
 
 from . import (
@@ -26,7 +28,7 @@ _REQUESTS_LIST_TYPE = Dict[str, List[Request]]
 
 class OrderBook:
     """
-    Object for working with list of requests
+    Object for working with a list of requests
     """
 
     def __init__(self):
@@ -38,7 +40,7 @@ class OrderBook:
     @staticmethod
     def __check_request_id(request_id: int) -> None:
         """
-        Method for validating request_id
+        request_id validation method
 
         :param request_id: Request id
 
@@ -57,7 +59,7 @@ class OrderBook:
     @staticmethod
     def __check_request_type(request_type: str) -> None:
         """
-        Method for validation request_type
+        request_type validation method
 
         :param request_type: Request type
 
@@ -67,49 +69,70 @@ class OrderBook:
         if request_type not in [RequestTypes.ASK, RequestTypes.BID]:
             LOGGER.error('request_type is not Ask or Bid (%s)' % request_type)
             raise RequestTypeError(
-                f'Request type should be {RequestTypes.ASK} or {RequestTypes.BID}: {request_type}'
+                f'The request type should be {RequestTypes.ASK} or {RequestTypes.BID}: {request_type}'
             ) from TypeError
 
     def add_request(self, request: Request) -> None:
         """
-        Method for adding new request to requests list
+        Method for adding a new request to the requests list
 
         :param request: Request object
 
         :return: None
         """
-        LOGGER.debug('Trying to add new request: %s' % str(request))
+        LOGGER.debug('Trying to add a new request: %s' % str(request))
 
-        # Request should be instance of Request
+        # The request must be an instance of the Request
         if not isinstance(request, Request):
-            LOGGER.error('Request is not instance of Request (%s)' % type(request))
-            raise RequestError(f'Request should be instance of Request: {request}.') from TypeError
+            LOGGER.error('The request is not an instance of the Request (%s)' % type(request))
+            raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError
 
-        # Request should not exist in list
+        # The request must not exist in the requests list
         if request in self._requests[request.type]:
-            LOGGER.error('Request already exists')
-            raise RequestAlreadyExistsError(f'Request already exists: {request}.')
+            LOGGER.warning('The request is already exists')
+            raise RequestAlreadyExistsError(f'The request is already exists: {request}.')
 
-        # Request with the same id should not exist
+        # The request with the same id must not exist in the requests list
         if self._get_request(request.id, raise_if_not_found=False) is not None:
-            LOGGER.error('Request with id "%s" already exists' % request.id)
-            raise RequestAlreadyExistsError(f'Request with id "{request.id}" already exists.')
+            LOGGER.error('The request with id "%s" is already exists' % request.id)
+            raise RequestAlreadyExistsError(f'The request with id "{request.id}" is already exists.')
 
-        # Adding request to list
+        # Adding the request to the requests list
         self._requests[request.type].append(request)
 
-        LOGGER.debug('Request was added successfully')
+        LOGGER.debug('The request was added successfully')
+
+    def add_requests(self, requests: List[Request],
+                     raise_exceptions: bool = True) -> Union[List[Tuple[Request, str]], None]:
+        """
+        Method for adding multiple requests to the requests list
+        If raise_exceptions is False method will return a list of "bad" requests
+
+        :param requests: List of requests
+        :param raise_exceptions: Raise exceptions or not
+        :return: List of "bad" requests or None
+        """
+        bad_requests = []
+        for request in requests:
+            try:
+                self.add_request(request)
+            except Exception as exception:
+                if raise_exceptions:
+                    raise exception
+                bad_requests.append((request, type(exception).__name__))
+                continue
+        return bad_requests
 
     def delete_request(self, request_id: int, request_type: Optional[str] = None) -> None:
         """
-        Method for deleting request from requests list
+        Method for deleting a request from the requests list
 
         :param request_id: Request id
         :param request_type: Request type
 
         :return: None
         """
-        LOGGER.debug('Trying to delete request with id "%s" and type "%s"' % (request_id, request_type))
+        LOGGER.debug('Trying to delete the request with id "%s" and type "%s"' % (request_id, request_type))
 
         # Searching request
         request = self._get_request(request_id=request_id, request_type=request_type)
@@ -117,12 +140,12 @@ class OrderBook:
         # Deleting request
         self._requests[request.type].remove(request)
 
-        LOGGER.debug('Request was deleted successfully')
+        LOGGER.debug('The request was deleted successfully')
 
     def _get_request(self, request_id: int, request_type: Optional[str] = None,
                      raise_if_not_found: Optional[bool] = True) -> Request:
         """
-        Method for getting request object from requests list
+        Method for getting a request object from the requests list
 
         :param request_id: Request id
         :param request_type: Request type
@@ -130,10 +153,10 @@ class OrderBook:
 
         :return: Request object
         """
-        LOGGER.debug('Trying to find request with id "%s" and type "%s"' % (request_id, request_type))
+        LOGGER.debug('Trying to find the request with id "%s" and type "%s"' % (request_id, request_type))
         self.__check_request_id(request_id)
 
-        # If request_type is None - creating list self._requests['Ask'] + self._requests['Bid']
+        # If request_type is None - creating a list self._requests['Ask'] + self._requests['Bid']
         if request_type is None:
             requests_list = [request for request_type, request_list in self._requests.items() for request in
                              request_list]
@@ -145,18 +168,18 @@ class OrderBook:
         # Searching request
         for request in requests_list:
             if request_id == request:
-                LOGGER.debug('Request was found successfully')
+                LOGGER.debug('The request was found successfully')
                 return request
 
-        LOGGER.warning('Request with id "%s" and type "%s" was not found' % (request_id, request_type))
+        LOGGER.warning('The request with id "%s" and type "%s" was not found' % (request_id, request_type))
 
         # Raising exception if request was not found and raise_if_not_found is True
         if raise_if_not_found:
-            raise RequestWasNotFoundError(f'Request with id "{request_id}" was not found.')
+            raise RequestWasNotFoundError(f'The request with id "{request_id}" was not found.')
 
     def get_request_info(self, request_id: int, request_type: Optional[str] = None) -> str:
         """
-        Method for getting request info from requests list
+        Method for getting a request info from the requests list
 
         :param request_id: Request id
         :param request_type: Request type
@@ -168,7 +191,7 @@ class OrderBook:
     def change_request_info(self, request_id: int, price: Optional[PRICE_TYPE] = None,
                             volume: Optional[int] = None) -> None:
         """
-        Method for changing request info in requests list
+        Method for changing a request info in the requests list
 
         :param request_id: Request id
         :param price: New price
@@ -176,7 +199,7 @@ class OrderBook:
 
         :return: None
         """
-        LOGGER.debug('Trying to change request info (request_id: %s)' % request_id)
+        LOGGER.debug('Trying to change the request info (request_id: %s)' % request_id)
 
         # Either price or volume should be specified
         if not any([x is not None for x in (price, volume)]):
@@ -194,15 +217,15 @@ class OrderBook:
             LOGGER.debug('Changing volume from %s to %s' % (request.volume, volume))
             request.volume = volume
 
-        LOGGER.debug('Request info was changed successfully')
+        LOGGER.debug('The request info was changed successfully')
 
     def get_snapshot(self) -> _REQUESTS_LIST_TYPE:
         """
-        Method for getting snapshot of current requests list
+        Method for getting a snapshot of the current requests list
 
         :return: Requests dict: {'Asks': [...], 'Bids': [...]}
         """
-        # Creating copy to avoid changing of self._requests dict
+        # Creating a copy to avoid changing of the self._requests dict
         result = self._requests.copy()
 
         # Changing keys to follow the documentation
@@ -210,5 +233,5 @@ class OrderBook:
             'Asks': result[RequestTypes.ASK],
             'Bids': result[RequestTypes.BID],
         }
-        LOGGER.debug('New snapshot created: %s' % result)
+        LOGGER.debug('A new snapshot was created: %s' % result)
         return result

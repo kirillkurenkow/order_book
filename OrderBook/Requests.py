@@ -33,11 +33,11 @@ class Request:
         """
         self._price: PRICE_TYPE = ...
         self._volume: int = ...
-        self.price = price
-        self.volume = volume
         self._id: int = self._curr_id
         Request._curr_id += 1
-        LOGGER.debug('New request was created: %s' % str(self))
+        self.price = price
+        self.volume = volume
+        LOGGER.debug('A new request was created: %s' % str(self))
 
     @property
     def price(self) -> PRICE_TYPE:
@@ -57,19 +57,19 @@ class Request:
 
         :return: None
         """
-        LOGGER.debug(f'Trying to set new price (%s) for request with id "%s"' % (value, self.id))
+        LOGGER.debug(f'Trying to set a new price (%s) for the request with id "%s"' % (value, self.id))
 
         # Price should be instance of int or float
         if not isinstance(value, PRICE_TYPE):
             LOGGER.error('The new price is not an int or float instance (%s)' % type(value))
-            raise RequestPriceError(f'Price should be instance of int or float: {value}.') from TypeError
+            raise RequestPriceError(f'A price should be an instance of int or float: {value}.') from TypeError
 
         # Price should be over than 0
         if value <= 0:
             LOGGER.error('The new price is lower than 0 (%s)' % value)
-            raise RequestPriceError('Price should be over than 0.') from ValueError
+            raise RequestPriceError('A price should be over than 0.') from ValueError
 
-        LOGGER.debug('New price was set successfully')
+        LOGGER.debug('A new price was set successfully')
         self._price = value
 
     @property
@@ -90,17 +90,17 @@ class Request:
 
         :return: None
         """
-        LOGGER.debug(f'Trying to set new volume (%s) for request with id "%s"' % (value, self.id))
+        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id "%s"' % (value, self.id))
 
         # Volume should be instance of int
         if not isinstance(value, int):
             LOGGER.error('The new volume is not an int instance (%s)' % type(value))
-            raise RequestVolumeError(f'Volume should be instance of int: {value}.') from TypeError
+            raise RequestVolumeError(f'A volume should be an instance of int: {value}.') from TypeError
 
         # Volume can not be lower than 1
         if value < 1:
             LOGGER.error('The new volume is lower than 1 (%s)' % value)
-            raise RequestVolumeError('Volume can not be lower than 1.') from ValueError
+            raise RequestVolumeError('A volume can not be lower than 1.') from ValueError
         self._volume = value
 
     @property
@@ -138,7 +138,7 @@ class Request:
 
 class AskRequest(Request):
     """
-    Request of type 'Ask'
+    Request of the type 'Ask'
     """
 
     @property
@@ -153,7 +153,7 @@ class AskRequest(Request):
 
 class BidRequest(Request):
     """
-    Request of type 'Bid'
+    Request of the type 'Bid'
     """
 
     @property
