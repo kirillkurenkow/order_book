@@ -1,8 +1,16 @@
-from allure import step, severity, severity_level
-from OrderBook.Requests import Request
-from OrderBook import RequestPriceError
 import pytest
-from Tests.Source import attach_dict_to_report, Defaults
+from allure import (
+    step,
+    severity,
+    severity_level,
+)
+
+from OrderBook import RequestPriceError
+from OrderBook.Requests import Request
+from Tests.Source import (
+    attach_dict_to_report,
+    Defaults,
+)
 
 
 @severity(severity_level.BLOCKER)
