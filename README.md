@@ -2,7 +2,7 @@
 ## TODO
 ### OrderBook
 * [x] Add typing
-* [ ] Add doc-strings and comments
+* [x] Add doc-strings and comments
 * [ ] Add logging
 
 ### Tests

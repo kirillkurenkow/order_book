@@ -11,14 +11,24 @@ PRICE_TYPE = Union[int, float]
 
 
 class RequestTypes:
+    """
+    Request types
+    """
     ASK = 'Ask'
     BID = 'Bid'
 
 
 class Request:
+    """
+    Base request without type
+    """
     _curr_id: int = 0
 
     def __init__(self, price: PRICE_TYPE, volume: int):
+        """
+        :param price: Request price
+        :param volume: Request volume
+        """
         self._price: PRICE_TYPE = ...
         self._volume: int = ...
         self.price = price
@@ -28,10 +38,22 @@ class Request:
 
     @property
     def price(self) -> PRICE_TYPE:
+        """
+        Request price getter
+
+        :return: Request price
+        """
         return self._price
 
     @price.setter
     def price(self, value: PRICE_TYPE) -> None:
+        """
+        Request price setter
+
+        :param value: New request price
+
+        :return: None
+        """
         if not isinstance(value, PRICE_TYPE):
             raise RequestPriceError(f'Price should be instance of int or float: {value}.') from TypeError
         if value <= 0:
@@ -40,10 +62,22 @@ class Request:
 
     @property
     def volume(self) -> int:
+        """
+        Request volume getter
+
+        :return: Request volume
+        """
         return self._volume
 
     @volume.setter
     def volume(self, value) -> None:
+        """
+        Request volume setter
+
+        :param value: New request volume
+
+        :return: None
+        """
         if not isinstance(value, int):
             raise RequestVolumeError(f'Volume should be instance of int: {value}.') from TypeError
         if value < 1:
@@ -52,13 +86,28 @@ class Request:
 
     @property
     def id(self) -> int:
+        """
+        Request id getter
+
+        :return: Request id
+        """
         return self._id
 
     @property
     def type(self) -> str:
+        """
+        Request type getter
+
+        :return: ''
+        """
         return ''
 
     def __str__(self) -> str:
+        """
+        Request string representation
+
+        :return: str: '{'id': ..., 'price': ..., 'volume': ..., 'type': ...}'
+        """
         result = {
             'id': self.id,
             'price': self.price,
@@ -69,12 +118,30 @@ class Request:
 
 
 class AskRequest(Request):
+    """
+    Request of type 'Ask'
+    """
+
     @property
     def type(self) -> str:
+        """
+        Overrides Request.type
+
+        :return: 'Ask'
+        """
         return RequestTypes.ASK
 
 
 class BidRequest(Request):
+    """
+    Request of type 'Bid'
+    """
+
     @property
     def type(self) -> str:
+        """
+        Overrides Request.type
+
+        :return: 'Bid'
+        """
         return RequestTypes.BID
