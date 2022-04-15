@@ -62,7 +62,8 @@ class Request:
         # The price should be an instance of int or float
         if not isinstance(value, PRICE_TYPE):
             LOGGER.error('The new price is not an int or float instance (%s)' % type(value))
-            raise RequestPriceError(f'The price should be an instance of int or float: {value}.') from TypeError
+            raise RequestPriceError(
+                f'The price should be an instance of int or float, got {type(value)}.') from TypeError
 
         # The price should be over than 0
         if value <= 0:
@@ -95,7 +96,7 @@ class Request:
         # The Volume should be an instance of int
         if not isinstance(value, int):
             LOGGER.error('The new volume is not an int instance (%s)' % type(value))
-            raise RequestVolumeError(f'A volume should be an instance of int: {value}.') from TypeError
+            raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError
 
         # The Volume can not be lower than 1
         if value < 1:
