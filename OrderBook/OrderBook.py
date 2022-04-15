@@ -1,3 +1,4 @@
+import logging
 from typing import (
     Dict,
     List,
@@ -19,6 +20,7 @@ from .Requests import (
 
 __all__ = ['OrderBook']
 
+LOGGER = logging.getLogger(__name__)
 _REQUESTS_LIST_TYPE = Dict[str, List[Request]]
 
 
@@ -42,9 +44,14 @@ class OrderBook:
 
         :return: None
         """
+        # request_id should be instance of int
         if not isinstance(request_id, int):
+            LOGGER.error('request_id is not instance if int (%s)' % type(request_id))
             raise RequestIdError(f'request_id should be instance of int: {request_id}') from TypeError
+
+        # request_id can not be lower than 0
         if request_id < 0:
+            LOGGER.error('request_id is lower than 0 (%s)' % request_id)
             raise RequestIdError(f'request_id can not be lower than 0: {request_id}') from ValueError
 
     @staticmethod
@@ -56,7 +63,9 @@ class OrderBook:
 
         :return: None
         """
+        # request_type should be Ask or Bid
         if request_type not in [RequestTypes.ASK, RequestTypes.BID]:
+            LOGGER.error('request_type is not Ask or Bid (%s)' % request_type)
             raise RequestTypeError(
                 f'Request type should be {RequestTypes.ASK} or {RequestTypes.BID}: {request_type}'
             ) from TypeError
@@ -69,20 +78,27 @@ class OrderBook:
 
         :return: None
         """
+        LOGGER.debug('Trying to add new request: %s' % str(request))
+
         # Request should be instance of Request
         if not isinstance(request, Request):
+            LOGGER.error('Request is not instance of Request (%s)' % type(request))
             raise RequestError(f'Request should be instance of Request: {request}.') from TypeError
 
         # Request should not exist in list
         if request in self._requests[request.type]:
+            LOGGER.error('Request already exists')
             raise RequestAlreadyExistsError(f'Request already exists: {request}.')
 
         # Request with the same id should not exist
         if self._get_request(request.id, raise_if_not_found=False) is not None:
+            LOGGER.error('Request with id "%s" already exists' % request.id)
             raise RequestAlreadyExistsError(f'Request with id "{request.id}" already exists.')
 
         # Adding request to list
         self._requests[request.type].append(request)
+
+        LOGGER.debug('Request was added successfully')
 
     def delete_request(self, request_id: int, request_type: Optional[str] = None) -> None:
         """
@@ -93,11 +109,15 @@ class OrderBook:
 
         :return: None
         """
+        LOGGER.debug('Trying to delete request with id "%s" and type "%s"' % (request_id, request_type))
+
         # Searching request
         request = self._get_request(request_id=request_id, request_type=request_type)
 
         # Deleting request
         self._requests[request.type].remove(request)
+
+        LOGGER.debug('Request was deleted successfully')
 
     def _get_request(self, request_id: int, request_type: Optional[str] = None,
                      raise_if_not_found: Optional[bool] = True) -> Request:
@@ -110,6 +130,7 @@ class OrderBook:
 
         :return: Request object
         """
+        LOGGER.debug('Trying to find request with id "%s" and type "%s"' % (request_id, request_type))
         self.__check_request_id(request_id)
 
         # If request_type is None - creating list self._requests['Ask'] + self._requests['Bid']
@@ -124,7 +145,10 @@ class OrderBook:
         # Searching request
         for request in requests_list:
             if request_id == request:
+                LOGGER.debug('Request was found successfully')
                 return request
+
+        LOGGER.warning('Request with id "%s" and type "%s" was not found' % (request_id, request_type))
 
         # Raising exception if request was not found and raise_if_not_found is True
         if raise_if_not_found:
@@ -152,8 +176,11 @@ class OrderBook:
 
         :return: None
         """
+        LOGGER.debug('Trying to change request info (request_id: %s)' % request_id)
+
         # Either price or volume should be specified
         if not any([x is not None for x in (price, volume)]):
+            LOGGER.error('None of price or volume were specified')
             raise ValueError('Either price or volume should be specified')
 
         # Searching request
@@ -161,9 +188,13 @@ class OrderBook:
 
         # Changing data
         if price is not None:
+            LOGGER.debug('Changing price from %s to %s' % (request.price, price))
             request.price = price
         if volume is not None:
+            LOGGER.debug('Changing volume from %s to %s' % (request.volume, volume))
             request.volume = volume
+
+        LOGGER.debug('Request info was changed successfully')
 
     def get_snapshot(self) -> _REQUESTS_LIST_TYPE:
         """
@@ -179,4 +210,5 @@ class OrderBook:
             'Asks': result[RequestTypes.ASK],
             'Bids': result[RequestTypes.BID],
         }
+        LOGGER.debug('New snapshot created: %s' % result)
         return result

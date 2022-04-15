@@ -3,7 +3,7 @@
 ### OrderBook
 * [x] Add typing
 * [x] Add doc-strings and comments
-* [ ] Add logging
+* [x] Add logging
 
 ### Tests
 * [ ] Create base test
