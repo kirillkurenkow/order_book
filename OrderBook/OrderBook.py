@@ -46,7 +46,7 @@ class OrderBook:
 
         :return: None
         """
-        # request_id should be instance of int
+        # request_id should be an instance of int
         if not isinstance(request_id, int):
             LOGGER.error('request_id is not instance if int (%s)' % type(request_id))
             raise RequestIdError(f'request_id should be instance of int: {request_id}') from TypeError
