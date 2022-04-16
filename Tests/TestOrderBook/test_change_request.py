@@ -5,12 +5,12 @@ from allure import (
     severity_level,
 )
 
-from OrderBook import (
+from Tests.OrderBook import (
     RequestPriceError,
     RequestVolumeError,
     RequestWasNotFoundError,
 )
-from OrderBook.Requests import (
+from Tests.OrderBook.Requests import (
     AskRequest,
     BidRequest,
     RequestTypes,

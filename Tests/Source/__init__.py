@@ -3,7 +3,7 @@ from typing import Union
 
 import allure
 
-from OrderBook.Requests import Request
+from Tests.OrderBook.Requests import Request
 
 
 def attach_dict_to_report(data: Union[list, dict], name: str) -> None:

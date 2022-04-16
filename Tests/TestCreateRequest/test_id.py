@@ -5,7 +5,7 @@ from allure import (
     severity_level,
 )
 
-from OrderBook.Requests import Request
+from Tests.OrderBook.Requests import Request
 from Tests.Source import (
     attach_dict_to_report,
     Defaults,

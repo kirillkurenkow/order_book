@@ -5,7 +5,7 @@ from allure import (
     severity_level,
 )
 
-from OrderBook.Requests import (
+from Tests.OrderBook.Requests import (
     AskRequest,
     BidRequest,
 )
