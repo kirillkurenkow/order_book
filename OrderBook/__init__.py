@@ -6,6 +6,7 @@ __all__ = [
     'RequestVolumeError',
     'RequestTypeError',
     'RequestWasNotFoundError',
+    'RequestAlreadyExistsError',
 ]
 
 
