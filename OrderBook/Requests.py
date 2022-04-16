@@ -33,6 +33,7 @@ class Request:
         """
         self._price: PRICE_TYPE = ...
         self._volume: int = ...
+        self._type = ''
         self._id: int = self._curr_id
         Request._curr_id += 1
         self.price = price
@@ -118,9 +119,9 @@ class Request:
         """
         Request type getter
 
-        :return: ''
+        :return: Request type
         """
-        return ''
+        return self._type
 
     @property
     def as_dict(self) -> dict:
@@ -146,14 +147,9 @@ class AskRequest(Request):
     Request of the type 'Ask'
     """
 
-    @property
-    def type(self) -> str:
-        """
-        Overrides Request.type
-
-        :return: 'Ask'
-        """
-        return RequestTypes.ASK
+    def __init__(self, price: PRICE_TYPE, volume: int):
+        super(AskRequest, self).__init__(price=price, volume=volume)
+        self._type = RequestTypes.ASK
 
 
 class BidRequest(Request):
@@ -161,11 +157,6 @@ class BidRequest(Request):
     Request of the type 'Bid'
     """
 
-    @property
-    def type(self) -> str:
-        """
-        Overrides Request.type
-
-        :return: 'Bid'
-        """
-        return RequestTypes.BID
+    def __init__(self, price: PRICE_TYPE, volume: int):
+        super(BidRequest, self).__init__(price=price, volume=volume)
+        self._type = RequestTypes.BID
