@@ -17,4 +17,4 @@ def compare_request_with_request_info(request: Request, request_info: dict) -> N
 
 class Defaults:
     price = 100
-    volume = 1
+    volume = 5
