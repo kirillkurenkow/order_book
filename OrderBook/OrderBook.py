@@ -32,7 +32,7 @@ class OrderBook:
     """
 
     def __init__(self):
-        self._requests: _REQUESTS_LIST_TYPE = {
+        self.__requests: _REQUESTS_LIST_TYPE = {
             RequestTypes.ASK: [],
             RequestTypes.BID: [],
         }
@@ -88,7 +88,7 @@ class OrderBook:
             raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError
 
         # The request must not exist in the requests list
-        if request in self._requests[request.type]:
+        if request in self.__requests[request.type]:
             LOGGER.warning('The request is already exists')
             raise RequestAlreadyExistsError(f'The request is already exists: {request}.')
 
@@ -98,7 +98,7 @@ class OrderBook:
             raise RequestAlreadyExistsError(f'The request with id "{request.id}" is already exists.')
 
         # Adding the request to the requests list
-        self._requests[request.type].append(request)
+        self.__requests[request.type].append(request)
 
         LOGGER.debug('The request was added successfully')
 
@@ -138,7 +138,7 @@ class OrderBook:
         request = self._get_request(request_id=request_id, request_type=request_type)
 
         # Deleting request
-        self._requests[request.type].remove(request)
+        self.__requests[request.type].remove(request)
 
         LOGGER.debug('The request was deleted successfully')
 
@@ -158,11 +158,11 @@ class OrderBook:
 
         # If request_type is None - creating a list self._requests['Ask'] + self._requests['Bid']
         if request_type is None:
-            requests_list = self._requests[RequestTypes.ASK] + self._requests[RequestTypes.BID]
+            requests_list = self.__requests[RequestTypes.ASK] + self.__requests[RequestTypes.BID]
         # Else searching in self._requests[request_type]
         else:
             self.__check_request_type(request_type)
-            requests_list = self._requests[request_type]
+            requests_list = self.__requests[request_type]
 
         # Searching request
         for request in requests_list:
@@ -225,7 +225,7 @@ class OrderBook:
         :return: Requests dict: {'Asks': [...], 'Bids': [...]}
         """
         # Creating a copy to avoid changing of the self._requests dict
-        result = self._requests.copy()
+        result = self.__requests.copy()
 
         # Changing keys to follow the documentation
         result = {
