@@ -1,8 +1,25 @@
 import pytest
-from allure import step, severity, severity_level
-from Tests.Source import attach_dict_to_report, Defaults, compare_request_with_request_info
-from OrderBook.Requests import AskRequest, BidRequest, RequestTypes
-from OrderBook import RequestPriceError, RequestVolumeError, RequestWasNotFoundError
+from allure import (
+    step,
+    severity,
+    severity_level,
+)
+
+from OrderBook import (
+    RequestPriceError,
+    RequestVolumeError,
+    RequestWasNotFoundError,
+)
+from OrderBook.Requests import (
+    AskRequest,
+    BidRequest,
+    RequestTypes,
+)
+from Tests.Source import (
+    attach_dict_to_report,
+    Defaults,
+    compare_request_with_request_info,
+)
 
 
 @severity(severity_level.BLOCKER)
