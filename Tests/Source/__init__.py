@@ -1,9 +1,12 @@
-from OrderBook.Requests import Request
-import allure
 import json
+from typing import Union
+
+import allure
+
+from OrderBook.Requests import Request
 
 
-def attach_dict_to_report(data: dict, name: str) -> None:
+def attach_dict_to_report(data: Union[list, dict], name: str) -> None:
     data = json.dumps(data, ensure_ascii=False, indent=4)
     allure.attach(data, name=name, attachment_type=allure.attachment_type.JSON)
 
