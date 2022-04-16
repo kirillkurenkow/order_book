@@ -31,7 +31,7 @@ def test_price_float():
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
-@pytest.mark.xfail(raises=RequestPriceError)
+@pytest.mark.xfail(raises=RequestPriceError, strict=True)
 def test_negative_price():
     with step('Creating request'):
         Request(price=-100, volume=Defaults.volume)
@@ -39,7 +39,7 @@ def test_negative_price():
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
-@pytest.mark.xfail(raises=RequestPriceError)
+@pytest.mark.xfail(raises=RequestPriceError, strict=True)
 def test_zero_price():
     with step('Creating request'):
         Request(price=0, volume=Defaults.volume)
@@ -47,7 +47,7 @@ def test_zero_price():
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
-@pytest.mark.xfail(raises=RequestPriceError)
+@pytest.mark.xfail(raises=RequestPriceError, strict=True)
 @pytest.mark.parametrize('price', [
     f'{Defaults.price}',
     [Defaults.price],

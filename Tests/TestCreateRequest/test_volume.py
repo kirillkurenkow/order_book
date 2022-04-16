@@ -23,7 +23,7 @@ def test_volume():
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
-@pytest.mark.xfail(raises=RequestVolumeError)
+@pytest.mark.xfail(raises=RequestVolumeError, strict=True)
 def test_negative_volume():
     with step('Creating request'):
         Request(price=Defaults.price, volume=-5)
@@ -31,7 +31,7 @@ def test_negative_volume():
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
-@pytest.mark.xfail(raises=RequestVolumeError)
+@pytest.mark.xfail(raises=RequestVolumeError, strict=True)
 def test_zero_volume():
     with step('Creating request'):
         Request(price=Defaults.price, volume=0)
@@ -39,7 +39,7 @@ def test_zero_volume():
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
-@pytest.mark.xfail(raises=RequestVolumeError)
+@pytest.mark.xfail(raises=RequestVolumeError, strict=True)
 @pytest.mark.parametrize('volume', [
     f'{Defaults.volume}',
     [Defaults.volume],
