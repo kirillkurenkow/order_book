@@ -1,8 +1,23 @@
-from allure import step, severity, severity_level
 import pytest
-from OrderBook import RequestAlreadyExistsError, RequestError
-from OrderBook.Requests import AskRequest, BidRequest, Request
-from Tests.Source import attach_dict_to_report, Defaults, compare_request_with_request_info
+from allure import (
+    step,
+    severity,
+    severity_level,
+)
+
+from OrderBook import (
+    RequestAlreadyExistsError,
+    RequestError,
+)
+from OrderBook.Requests import (
+    AskRequest,
+    BidRequest,
+)
+from Tests.Source import (
+    attach_dict_to_report,
+    Defaults,
+    compare_request_with_request_info,
+)
 
 
 @pytest.mark.positive
