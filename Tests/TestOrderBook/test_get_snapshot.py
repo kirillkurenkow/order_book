@@ -102,9 +102,9 @@ def test_change_snapshot(order_book):
         attach_dict_to_report(snapshot, 'Snapshot')
     with step('Change snapshot'):
         changed_snapshot = snapshot.copy()
-        for request_type, requests_list in changed_snapshot.items():
-            for request in requests_list:
-                request['price'] += 10
+        for request_type, prices_list in changed_snapshot.items():
+            for price_info in prices_list:
+                price_info['price'] += 10
         attach_dict_to_report(changed_snapshot, 'Changed snapshot')
     with step('Get snapshot'):
         new_snapshot = order_book.get_snapshot()

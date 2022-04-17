@@ -224,13 +224,30 @@ class OrderBook:
 
         :return: Requests dict: {'Asks': [...], 'Bids': [...]}
         """
-        # Creating a copy to avoid changing of the self._requests dict
-        result = self.__requests.copy()
-
-        # Changing keys to follow the documentation
+        ask_prices = sorted({x.price for x in self.__requests[RequestTypes.ASK]}, reverse=True)
+        bid_prices = sorted({x.price for x in self.__requests[RequestTypes.BID]})
         result = {
-            'Asks': [x.as_dict for x in result[RequestTypes.ASK]],
-            'Bids': [x.as_dict for x in result[RequestTypes.BID]],
+            'Asks': [],
+            'Bids': [],
         }
+
+        for ask_price in ask_prices:
+            volume = 0
+            for request in self.__requests[RequestTypes.ASK]:
+                if request.price == ask_price:
+                    volume += request.volume
+            result['Asks'].append({
+                'price': ask_price,
+                'volume': volume,
+            })
+        for bid_price in bid_prices:
+            volume = 0
+            for request in self.__requests[RequestTypes.ASK]:
+                if request.price == bid_price:
+                    volume += request.volume
+            result['Bids'].append({
+                'price': bid_price,
+                'volume': volume,
+            })
         LOGGER.debug('A new snapshot was created: %s' % result)
         return result

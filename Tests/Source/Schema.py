@@ -23,9 +23,13 @@ class OrderBookSchema:
         'volume': int,
         'type': Or('Ask', 'Bid'),
     }, name='Request info')
+    snapshot_price_info = Schema({
+        'price': Or(int, float),
+        'volume': int,
+    }, name='Snapshot price info')
     snapshot = Schema({
-        'Asks': [request_info],
-        'Bids': [request_info],
+        'Asks': [snapshot_price_info],
+        'Bids': [snapshot_price_info],
     }, name='Snapshot')
 
 
