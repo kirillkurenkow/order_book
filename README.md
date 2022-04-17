@@ -1,5 +1,7 @@
 # Project for CQG interview
 
+How to work with OrderBook you can read [here](/Tests/OrderBook).
+
 ## How to run tests
 ### Install requirements
 You can install requirements by executing this from project directory
