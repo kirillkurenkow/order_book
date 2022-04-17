@@ -19,7 +19,10 @@ from Tests.Source import (
     attach_dict_to_report,
     compare_request_with_request_info,
 )
-from Tests.Source.Schema import OrderBookSchema, validate
+from Tests.Source.Schema import (
+    OrderBookSchema,
+    validate,
+)
 
 
 @severity(severity_level.BLOCKER)

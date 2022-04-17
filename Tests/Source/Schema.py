@@ -5,6 +5,7 @@ from schema import (
     Or,
     SchemaError,
 )
+
 from . import attach_dict_to_report
 
 __all__ = ['OrderBookSchema', 'validate']
