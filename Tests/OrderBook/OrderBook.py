@@ -242,7 +242,7 @@ class OrderBook:
             })
         for bid_price in bid_prices:
             volume = 0
-            for request in self.__requests[RequestTypes.ASK]:
+            for request in self.__requests[RequestTypes.BID]:
                 if request.price == bid_price:
                     volume += request.volume
             result['Bids'].append({
