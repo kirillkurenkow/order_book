@@ -37,6 +37,7 @@ def test_negative_volume():
 
     Steps:
         1. Creating request
+            E: Request not created
             E: RequestVolumeError raised
     """
     with step('Creating request'):
@@ -52,6 +53,7 @@ def test_zero_volume():
 
     Steps:
         1. Creating request
+            E: Request not created
             E: RequestVolumeError raised
     """
     with step('Creating request'):
@@ -74,6 +76,7 @@ def test_wrong_volume_type(volume):
 
     Steps:
         1. Creating request
+            E: Request not created
             E: RequestVolumeError raised
     """
     with step('Creating request'):

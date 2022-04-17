@@ -52,6 +52,7 @@ def test_negative_price():
 
     Steps:
         1. Creating request
+            E: Request not created
             E: RequestPriceError raised
     """
     with step('Creating request'):
@@ -67,6 +68,7 @@ def test_zero_price():
 
     Steps:
         1. Creating request
+            E: Request not created
             E: RequestPriceError raised
     """
     with step('Creating request'):
@@ -88,6 +90,7 @@ def test_wrong_price_type(price):
 
     Steps:
         1. Creating request
+            E: Request not created
             E: RequestPriceError raised
     """
     with step('Creating request'):
