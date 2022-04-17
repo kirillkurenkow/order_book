@@ -37,6 +37,14 @@ def compare_request_with_request_info(request: Request, request_info: dict) -> N
 
 
 def check_request_not_in_snapshot(request: Request, snapshot: dict) -> None:
+    """
+    Check that snapshot has no request_info with request.id
+
+    :param request: Request object
+    :param snapshot: Snapshot dict
+
+    :return: None
+    """
     all_requests = snapshot['Asks'] + snapshot['Bids']
     for snapshot_request in all_requests:
         assert snapshot_request['id'] != request.id, 'Request with the same id was found in the snapshot'
