@@ -34,6 +34,12 @@ def compare_request_with_request_info(request: Request, request_info: dict) -> N
     assert request.id == request_info['id'], 'Wrong id in request_info'
 
 
+def check_request_not_in_snapshot(request: Request, snapshot: dict) -> None:
+    all_requests = snapshot['Asks'] + snapshot['Bids']
+    for snapshot_request in all_requests:
+        assert snapshot_request['id'] != request.id, 'Request with the same id was found in the snapshot'
+
+
 class Defaults:
     """
     Class with default test values

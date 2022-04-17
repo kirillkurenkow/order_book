@@ -17,6 +17,7 @@ from Tests.OrderBook.Requests import (
 from Tests.Source import (
     Defaults,
     attach_dict_to_report,
+    check_request_not_in_snapshot,
 )
 
 
@@ -36,6 +37,8 @@ def test_remove_request(order_book, request_type):
             E: Request removed successfully
         4. Get snapshot
             E: Snapshot received successfully
+        5. Check the request is not in the snapshot
+            E: There are no request with the same id in the snapshot
     """
     with step('Generate request'):
         request = request_type(price=Defaults.price, volume=Defaults.volume)
@@ -47,7 +50,8 @@ def test_remove_request(order_book, request_type):
     with step('Get snapshot'):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
-        # todo Add check request not in snapshot
+    with step('Check the request is not in the snapshot'):
+        check_request_not_in_snapshot(request, snapshot)
 
 
 @severity(severity_level.CRITICAL)
