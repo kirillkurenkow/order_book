@@ -2,7 +2,7 @@
 
 ## How to run tests
 ### Install requirements
-You can install requirements by executing this from [ProjectDir](/)
+You can install requirements by executing this from project directory
 ```shell
 pip install -r requirements.txt
 ```
