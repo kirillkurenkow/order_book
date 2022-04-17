@@ -22,6 +22,19 @@ from Tests.Source.Schema import (
 @severity(severity_level.BLOCKER)
 @pytest.mark.positive
 def test_get_snapshot(order_book):
+    """
+    Test checks the possibility of getting a snapshot from the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Validate snapshot
+            E: Validation succeeded
+    """
     with step('Generate requests'):
         request_ask = AskRequest(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request_ask.as_dict, 'Request ask')
@@ -40,6 +53,15 @@ def test_get_snapshot(order_book):
 @severity(severity_level.BLOCKER)
 @pytest.mark.positive
 def test_get_empty_snapshot(order_book):
+    """
+    Test checks the possibility of getting an empty snapshot from the OrderBook
+
+    Steps:
+        1. Get snapshot
+            E: Snapshot received successfully
+        2. Validate snapshot
+            E: Validation succeeded
+    """
     with step('Get snapshot'):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
@@ -50,6 +72,23 @@ def test_get_empty_snapshot(order_book):
 @severity(severity_level.CRITICAL)
 @pytest.mark.positive
 def test_change_snapshot(order_book):
+    """
+    Test checks the possibility of changing a snapshot dict object from the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Change snapshot
+            E: Snapshot dict object changed
+        5. Get snapshot
+            E: Snapshot received successfully
+        6. Check snapshot not changed
+            E: Snapshot is the same as in the step 3
+    """
     with step('Generate requests'):
         request_ask = AskRequest(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request_ask.as_dict, 'Request ask')

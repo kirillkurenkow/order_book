@@ -24,6 +24,19 @@ from Tests.Source import (
 @pytest.mark.positive
 @pytest.mark.parametrize('request_type', [AskRequest, BidRequest])
 def test_remove_request(order_book, request_type):
+    """
+    Test checks the possibility of removing a request from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: Request removed successfully
+        4. Get snapshot
+            E: Snapshot received successfully
+    """
     with step('Generate request'):
         request = request_type(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -34,12 +47,24 @@ def test_remove_request(order_book, request_type):
     with step('Get snapshot'):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
+        # todo Add check request not in snapshot
 
 
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
 @pytest.mark.xfail(raises=RequestWasNotFoundError, strict=True)
 def test_remove_not_existing_request(order_book):
+    """
+    Test checks the possibility of removing a not existing request from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: RequestWasNotFoundError raised
+    """
     with step('Generate request'):
         request = AskRequest(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -53,6 +78,17 @@ def test_remove_not_existing_request(order_book):
 @pytest.mark.negative
 @pytest.mark.xfail(raises=RequestWasNotFoundError, strict=True)
 def test_remove_request_wrong_request_type(order_book):
+    """
+    Test checks the possibility of removing a request with wrong type from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: RequestWasNotFoundError raised
+    """
     with step('Generate request'):
         request = AskRequest(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -66,6 +102,17 @@ def test_remove_request_wrong_request_type(order_book):
 @pytest.mark.negative
 @pytest.mark.xfail(raises=RequestTypeError, strict=True)
 def test_remove_not_existing_request_type(order_book):
+    """
+    Test checks the possibility of removing a request with a non-existent type from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: RequestTypeError raised
+    """
     with step('Generate request'):
         request = AskRequest(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')

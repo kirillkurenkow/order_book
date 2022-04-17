@@ -32,6 +32,19 @@ from Tests.Source import (
     (None, Defaults.volume + 1),
 ])
 def test_change_request(order_book, request_type, new_price, new_volume):
+    """
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    """
     with step('Generate request'):
         request = request_type(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -49,6 +62,19 @@ def test_change_request(order_book, request_type, new_price, new_volume):
 @pytest.mark.positive
 @pytest.mark.parametrize('request_type', [AskRequest, BidRequest])
 def test_change_same_values(order_book, request_type):
+    """
+    Test checks the possibility of changing a request info to the same values in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request info
+            E: The request info is the same as before
+    """
     with step('Generate request'):
         request = request_type(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -66,6 +92,17 @@ def test_change_same_values(order_book, request_type):
 @pytest.mark.negative
 @pytest.mark.xfail(raises=TypeError, strict=True)
 def test_change_request_type(order_book):
+    """
+    Test checks the possibility of changing a request type in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: TypeError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -79,6 +116,17 @@ def test_change_request_type(order_book):
 @pytest.mark.negative
 @pytest.mark.xfail(raises=TypeError, strict=True)
 def test_change_request_id(order_book):
+    """
+    Test checks the possibility of changing a request id in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: TypeError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -97,6 +145,17 @@ def test_change_request_id(order_book):
     str(Defaults.price),
 ])
 def test_change_wrong_new_price(order_book, new_price):
+    """
+    Test checks the possibility of changing a request price to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestPriceError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -116,6 +175,17 @@ def test_change_wrong_new_price(order_book, new_price):
     str(Defaults.volume),
 ])
 def test_change_wrong_new_volume(order_book, new_volume):
+    """
+    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestVolumeError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -128,7 +198,18 @@ def test_change_wrong_new_volume(order_book, new_volume):
 @severity(severity_level.CRITICAL)
 @pytest.mark.negative
 @pytest.mark.xfail(raises=RequestWasNotFoundError, strict=True)
-def test_not_existing_request(order_book):
+def test_change_not_existing_request(order_book):
+    """
+    Test checks the possibility of changing a not existing request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request with not existing id
+            E: RequestWasNotFoundError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -142,6 +223,17 @@ def test_not_existing_request(order_book):
 @pytest.mark.negative
 @pytest.mark.xfail(raises=ValueError, strict=True)
 def test_change_nothing(order_book):
+    """
+    Test checks the possibility of using change_request_info() function without price or volume arg
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Execute change_request_info() without price and volume args
+            E: ValueError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')

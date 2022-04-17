@@ -24,12 +24,23 @@ from Tests.Source import (
 @severity(severity_level.BLOCKER)
 @pytest.mark.parametrize('request_type', [AskRequest, BidRequest])
 def test_add_request(order_book, request_type):
+    """
+    Test checks the possibility of adding a single request to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Check that the request exists
+            E: Request exists
+    """
     with step('Generate request'):
         request = request_type(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
     with step('Add request'):
         order_book.add_request(request)
-    with step('Check request exists'):
+    with step('Check that the request exists'):
         request_info = order_book.get_request_info(request.id)
         attach_dict_to_report(request_info, 'Request info')
         compare_request_with_request_info(request, request_info)
@@ -39,6 +50,18 @@ def test_add_request(order_book, request_type):
 @severity(severity_level.CRITICAL)
 @pytest.mark.xfail(raises=RequestAlreadyExistsError, strict=True)
 def test_add_existing_request(order_book):
+    """
+    Test checks the possibility of adding an existing request to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Add existing request
+            E: Request not added
+            E: RequestAlreadyExistsError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -52,6 +75,18 @@ def test_add_existing_request(order_book):
 @severity(severity_level.CRITICAL)
 @pytest.mark.xfail(raises=RequestAlreadyExistsError, strict=True)
 def test_add_request_with_existing_id(order_book):
+    """
+    Test checks the possibility of adding a request with existing id to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Add request with the same id
+            E: Request not added
+            E: RequestAlreadyExistsError raised
+    """
     with step('Generate request'):
         request = AskRequest(Defaults.price, Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -72,5 +107,13 @@ def test_add_request_with_existing_id(order_book):
 ])
 @pytest.mark.xfail(raises=RequestError, strict=True)
 def test_add_not_a_request(order_book, request_):
+    """
+    Test checks the possibility of adding not a Request object to the OrderBook
+
+    Steps:
+        1. Add not a request
+            E: Request not added
+            E: RequestError raised
+    """
     with step('Add not a request'):
         order_book.add_request(request_)
