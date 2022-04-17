@@ -76,7 +76,7 @@ def test_snapshot_volume_counter(order_book, request_type, request_type_snapshot
         default_prices_count = 10
         requests = [request_type(Defaults.price, Defaults.volume + i) for i in range(default_prices_count)]
         requests.append(request_type(Defaults.price + price_diff, Defaults.volume))
-        attach_dict_to_report(requests, 'Requests')
+        attach_dict_to_report([request.as_dict for request in requests], 'Requests')
     with step('Add requests'):
         order_book.add_requests(requests)
     with step('Get snapshot'):
@@ -94,6 +94,7 @@ def test_snapshot_volume_counter(order_book, request_type, request_type_snapshot
         for price_info in snapshot[request_type_snapshot]:
             price = price_info['price']
             volume = price_info['volume']
+
             # Check if volume for default price was count right
             if price == Defaults.price:
                 expected_volume = sum(range(Defaults.volume, Defaults.volume + default_prices_count))
@@ -109,7 +110,7 @@ def test_snapshot_volume_counter(order_book, request_type, request_type_snapshot
             else:
                 raise AssertionError(f'Unexpected price was found: {price}')
 
-        # Check that default and changed prices were found
+        # Check if default and changed prices were found
         assert default_price_found, price_was_not_found_error.format(Defaults.price)
         assert changed_price_found, price_was_not_found_error.format(Defaults.price + price_diff)
 
@@ -140,10 +141,14 @@ def test_snapshot_prices_order_ask(order_book):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
     with step('Check prices order'):
+        # Base prices
         base_prices = sorted([request.price for request in requests], reverse=True)
         attach_dict_to_report(list(base_prices), 'Expected prices')
+
+        # Real prices
         real_prices = [price_info['price'] for price_info in snapshot['Asks']]
         attach_dict_to_report(real_prices, 'Real prices')
+
         assert base_prices == real_prices, 'Wrong prices order'
 
 
@@ -173,10 +178,14 @@ def test_snapshot_prices_order_bid(order_book):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
     with step('Check prices order'):
+        # Base prices
         base_prices = sorted([request.price for request in requests])
         attach_dict_to_report(list(base_prices), 'Expected prices')
+
+        # Real prices
         real_prices = [price_info['price'] for price_info in snapshot['Bids']]
         attach_dict_to_report(list(real_prices), 'Real prices')
+
         assert base_prices == real_prices, 'Wrong prices order'
 
 
