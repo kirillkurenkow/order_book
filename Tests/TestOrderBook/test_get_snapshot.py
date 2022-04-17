@@ -13,6 +13,10 @@ from Tests.Source import (
     Defaults,
     attach_dict_to_report,
 )
+from Tests.Source.Schema import (
+    OrderBookSchema,
+    validate,
+)
 
 
 @severity(severity_level.BLOCKER)
@@ -30,8 +34,7 @@ def test_get_snapshot(order_book):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
     with step('Validate snapshot'):
-        # todo Add validation
-        ...
+        validate(snapshot, OrderBookSchema.snapshot)
 
 
 @severity(severity_level.BLOCKER)
@@ -41,8 +44,7 @@ def test_get_empty_snapshot(order_book):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
     with step('Validate snapshot'):
-        # todo Add validation
-        ...
+        validate(snapshot, OrderBookSchema.snapshot)
 
 
 @severity(severity_level.CRITICAL)

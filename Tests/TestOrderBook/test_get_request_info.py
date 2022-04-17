@@ -19,6 +19,7 @@ from Tests.Source import (
     attach_dict_to_report,
     compare_request_with_request_info,
 )
+from Tests.Source.Schema import OrderBookSchema, validate
 
 
 @severity(severity_level.BLOCKER)
@@ -34,6 +35,8 @@ def test_get_request_info(order_book, request_type):
         request_info = order_book.get_request_info(request.id)
         attach_dict_to_report(request_info, 'Request info')
         compare_request_with_request_info(request, request_info)
+    with step('Validate request info'):
+        validate(request_info, OrderBookSchema.request_info)
 
 
 @severity(severity_level.CRITICAL)
