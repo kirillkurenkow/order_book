@@ -5,6 +5,8 @@ import allure
 
 from Tests.OrderBook.Requests import Request
 
+from .ConfigReader import Config
+
 
 def attach_dict_to_report(data: Union[list, dict], name: str) -> None:
     """
@@ -44,6 +46,8 @@ class Defaults:
     """
     Class with default test values
     """
-    # todo Add config?
-    price = 100
-    volume = 5
+    __config = Config('defaults.cfg')
+
+    __REQUEST_SECTION = 'REQUEST'
+    price = __config.getnumber(__REQUEST_SECTION, 'price')
+    volume = __config.getnumber(__REQUEST_SECTION, 'volume')
