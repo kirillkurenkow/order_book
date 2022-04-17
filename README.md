@@ -3,7 +3,7 @@
 ## How to run tests
 ### Install requirements
 You can install requirements by executing this from project directory
-```shell
+```cmd
 pip install -r requirements.txt
 ```
 
@@ -14,19 +14,19 @@ To change default test values you can check out [defaults.cfg](/Tests/Resource/d
 You can run tests from [Tests](/Tests) directory
 
 Just run all tests
-```shell
+```cmd
 pytest
 ```
 Run tests with report
-```shell
+```cmd
 pytest --alluredir {reports_dir}
 ```
 Run positive or negative tests
-```shell
+```cmd
 pytest -m {positive|neagative}
 ```
 
 ### View report
-```shell
+```cmd
 allure serve {reports_dir}
 ```
