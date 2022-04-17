@@ -4,7 +4,7 @@
 ### Install requirements
 You can install requirements by executing this from project directory
 ```cmd
-pip install -r requirements.txt
+pip install -r "requirements.txt"
 ```
 
 ### Check defaults config
@@ -19,14 +19,14 @@ pytest
 ```
 Run tests with report
 ```cmd
-pytest --alluredir {reports_dir}
+pytest --alluredir "{reports_dir}"
 ```
 Run positive or negative tests
 ```cmd
-pytest -m {positive|neagative}
+pytest -m "{positive|neagative}"
 ```
 
 ### View report
 ```cmd
-allure serve {reports_dir}
+allure serve "{reports_dir}"
 ```
