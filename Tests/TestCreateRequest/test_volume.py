@@ -16,6 +16,13 @@ from Tests.Source import (
 @severity(severity_level.BLOCKER)
 @pytest.mark.positive
 def test_volume():
+    """
+    Test checks the possibility of creating a request with a volume of type int
+
+    Steps:
+        1. Creating request
+            E: Request created successfully
+    """
     with step('Creating request'):
         request = Request(price=Defaults.price, volume=Defaults.volume)
         attach_dict_to_report(request.as_dict, 'Request')
@@ -25,6 +32,13 @@ def test_volume():
 @pytest.mark.negative
 @pytest.mark.xfail(raises=RequestVolumeError, strict=True)
 def test_negative_volume():
+    """
+    Test checks the possibility of creating a request with a volume of a negative value
+
+    Steps:
+        1. Creating request
+            E: RequestVolumeError raised
+    """
     with step('Creating request'):
         Request(price=Defaults.price, volume=-5)
 
@@ -33,6 +47,13 @@ def test_negative_volume():
 @pytest.mark.negative
 @pytest.mark.xfail(raises=RequestVolumeError, strict=True)
 def test_zero_volume():
+    """
+    Test checks the possibility of creating a request with a volume of zero value
+
+    Steps:
+        1. Creating request
+            E: RequestVolumeError raised
+    """
     with step('Creating request'):
         Request(price=Defaults.price, volume=0)
 
@@ -47,6 +68,13 @@ def test_zero_volume():
     None,
     1.5,
 ])
-def test_wrong_price_type(volume):
+def test_wrong_volume_type(volume):
+    """
+    Test checks the possibility of creating a request with a volume of the wrong type
+
+    Steps:
+        1. Creating request
+            E: RequestVolumeError raised
+    """
     with step('Creating request'):
         Request(price=Defaults.price, volume=volume)  # noqa
