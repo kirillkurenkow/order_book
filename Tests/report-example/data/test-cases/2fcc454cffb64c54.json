@@ -1,0 +1,166 @@
+{
+  "uid" : "2fcc454cffb64c54",
+  "name" : "test_remove_request[BidRequest]",
+  "fullName" : "TestOrderBook.test_remove_request#test_remove_request",
+  "historyId" : "88f438c77f9be0986261923918d70cda",
+  "time" : {
+    "start" : 1650199673657,
+    "stop" : 1650199673657,
+    "duration" : 0
+  },
+  "description" : "\n    Test checks the possibility of removing a request from the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Remove request\n            E: The function is executed without any exceptions\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of removing a request from the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Remove request\n        E: The function is executed without any exceptions\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673657,
+      "stop" : 1650199673657,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of removing a request from the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Remove request\n            E: The function is executed without any exceptions\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673657,
+        "stop" : 1650199673657,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8ac9ecc99e3ea478",
+        "name" : "Request",
+        "source" : "8ac9ecc99e3ea478.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673657,
+        "stop" : 1650199673657,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Remove request",
+      "time" : {
+        "start" : 1650199673657,
+        "stop" : 1650199673657,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "2043ecdb2db48a34",
+      "name" : "log",
+      "source" : "2043ecdb2db48a34.txt",
+      "type" : "text/plain",
+      "size" : 1113
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673658,
+      "stop" : 1650199673658,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_remove_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_remove_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "request_type",
+    "value" : "<class 'Tests.OrderBook.Requests.BidRequest'>"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "2fcc454cffb64c54.json",
+  "parameterValues" : [ "<class 'Tests.OrderBook.Requests.BidRequest'>" ]
+}

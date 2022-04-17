@@ -1,0 +1,121 @@
+{
+  "uid" : "a599b34ea87241d9",
+  "name" : "test_add_0_requests",
+  "fullName" : "TestOrderBook.test_add_mutiple_requests#test_add_0_requests",
+  "historyId" : "4d496219f8e32b6327c8d402ed3730a4",
+  "time" : {
+    "start" : 1650199673362,
+    "stop" : 1650199673362,
+    "duration" : 0
+  },
+  "description" : "\n    Test checks the possibility of adding 0 requests with add_multiple_requests function to the OrderBook\n\n    Steps:\n        1. Add multiple requests\n            E: The function is executed without any exceptions\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of adding 0 requests with add_multiple_requests function to the OrderBook\n\nSteps:\n    1. Add multiple requests\n        E: The function is executed without any exceptions\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673361,
+      "stop" : 1650199673361,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of adding 0 requests with add_multiple_requests function to the OrderBook\n\n    Steps:\n        1. Add multiple requests\n            E: The function is executed without any exceptions\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Add multiple requests",
+      "time" : {
+        "start" : 1650199673362,
+        "stop" : 1650199673362,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673362,
+      "stop" : 1650199673362,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_mutiple_requests"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_add_mutiple_requests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "a599b34ea87241d9.json",
+  "parameterValues" : [ ]
+}

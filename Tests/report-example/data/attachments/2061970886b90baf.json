@@ -1,0 +1,65 @@
+{
+    "type": "object",
+    "properties": {
+        "Asks": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "price": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "volume": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "price",
+                    "volume"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "Bids": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "price": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "number"
+                            }
+                        ]
+                    },
+                    "volume": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "price",
+                    "volume"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "Asks",
+        "Bids"
+    ],
+    "additionalProperties": false,
+    "$id": 1,
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Snapshot"
+}

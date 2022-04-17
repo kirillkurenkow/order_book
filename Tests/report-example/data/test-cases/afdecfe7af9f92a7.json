@@ -1,0 +1,175 @@
+{
+  "uid" : "afdecfe7af9f92a7",
+  "name" : "test_change_wrong_new_volume[0]",
+  "fullName" : "TestOrderBook.test_change_request#test_change_wrong_new_volume",
+  "historyId" : "737b7158019faa87c156c50344b20d4e",
+  "time" : {
+    "start" : 1650199673515,
+    "stop" : 1650199673516,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: RequestVolumeError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Change request\n        E: RequestVolumeError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume can not be lower than 1.",
+  "statusTrace" : "ValueError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD596950>\nnew_volume = 0\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestVolumeError, strict=True)\n    @pytest.mark.parametrize('new_volume', [\n        float(Defaults.volume),\n        0,\n        -Defaults.volume,\n        str(Defaults.volume),\n    ])\n    def test_change_wrong_new_volume(order_book, new_volume):\n        \"\"\"\n        Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Change request\n                E: RequestVolumeError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id, volume=new_volume)\n\nTestOrderBook\\test_change_request.py:195: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:217: in change_request_info\n    request.volume = volume\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.AskRequest object at 0x0000029EBD595540>\nvalue = 0\n\n    @volume.setter\n    def volume(self, value) -> None:\n        \"\"\"\n        Request volume setter\n    \n        :param value: New request volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The Volume should be an instance of int\n        if not isinstance(value, int):\n            LOGGER.error('The new volume is not an int instance (%s)' % type(value))\n            raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\n    \n        # The Volume can not be lower than 1\n        if value < 1:\n            LOGGER.error('The new volume is lower than 1 (%s)' % value)\n>           raise RequestVolumeError('A volume can not be lower than 1.') from ValueError\nE           Tests.OrderBook.RequestVolumeError: A volume can not be lower than 1.\n\nOrderBook\\Requests.py:105: RequestVolumeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673515,
+      "stop" : 1650199673515,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: RequestVolumeError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume can not be lower than 1.",
+    "statusTrace" : "ValueError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD596950>\nnew_volume = 0\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestVolumeError, strict=True)\n    @pytest.mark.parametrize('new_volume', [\n        float(Defaults.volume),\n        0,\n        -Defaults.volume,\n        str(Defaults.volume),\n    ])\n    def test_change_wrong_new_volume(order_book, new_volume):\n        \"\"\"\n        Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Change request\n                E: RequestVolumeError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id, volume=new_volume)\n\nTestOrderBook\\test_change_request.py:195: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:217: in change_request_info\n    request.volume = volume\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.AskRequest object at 0x0000029EBD595540>\nvalue = 0\n\n    @volume.setter\n    def volume(self, value) -> None:\n        \"\"\"\n        Request volume setter\n    \n        :param value: New request volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The Volume should be an instance of int\n        if not isinstance(value, int):\n            LOGGER.error('The new volume is not an int instance (%s)' % type(value))\n            raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\n    \n        # The Volume can not be lower than 1\n        if value < 1:\n            LOGGER.error('The new volume is lower than 1 (%s)' % value)\n>           raise RequestVolumeError('A volume can not be lower than 1.') from ValueError\nE           Tests.OrderBook.RequestVolumeError: A volume can not be lower than 1.\n\nOrderBook\\Requests.py:105: RequestVolumeError",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673515,
+        "stop" : 1650199673516,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "613c3e5e3c396dd8",
+        "name" : "Request",
+        "source" : "613c3e5e3c396dd8.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673516,
+        "stop" : 1650199673516,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Change request",
+      "time" : {
+        "start" : 1650199673516,
+        "stop" : 1650199673516,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestVolumeError: A volume can not be lower than 1.\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_change_request.py\", line 195, in test_change_wrong_new_volume\n    order_book.change_request_info(request.id, volume=new_volume)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 217, in change_request_info\n    request.volume = volume\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\Requests.py\", line 105, in volume\n    raise RequestVolumeError('A volume can not be lower than 1.') from ValueError\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "8d2508e8f427af4f",
+      "name" : "log",
+      "source" : "8d2508e8f427af4f.txt",
+      "type" : "text/plain",
+      "size" : 1280
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 2,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673521,
+      "stop" : 1650199673521,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestVolumeError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_change_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_change_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "new_volume",
+    "value" : "0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestVolumeError'>, strict=True)" ]
+  },
+  "source" : "afdecfe7af9f92a7.json",
+  "parameterValues" : [ "0" ]
+}

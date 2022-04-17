@@ -1,0 +1,193 @@
+{
+  "uid" : "99f15e5bc5dcfe11",
+  "name" : "test_get_request_info[AskRequest]",
+  "fullName" : "TestOrderBook.test_get_request_info#test_get_request_info",
+  "historyId" : "cd36b668b4bb7660d3ffa392d549b345",
+  "time" : {
+    "start" : 1650199673575,
+    "stop" : 1650199673577,
+    "duration" : 2
+  },
+  "description" : "\n    Test checks the possibility of getting a request info from the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Get request info\n            E: Request info received successfully\n        4. Validate request info\n            E: Validation succeeded\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of getting a request info from the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Get request info\n        E: Request info received successfully\n    4. Validate request info\n        E: Validation succeeded\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673575,
+      "stop" : 1650199673575,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of getting a request info from the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Get request info\n            E: Request info received successfully\n        4. Validate request info\n            E: Validation succeeded\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673575,
+        "stop" : 1650199673576,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "6a48ca5986864a6",
+        "name" : "Request",
+        "source" : "6a48ca5986864a6.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673576,
+        "stop" : 1650199673576,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Get request info",
+      "time" : {
+        "start" : 1650199673576,
+        "stop" : 1650199673576,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "542f66de100a8113",
+        "name" : "Request info",
+        "source" : "542f66de100a8113.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Validate request info",
+      "time" : {
+        "start" : 1650199673576,
+        "stop" : 1650199673577,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e5e57be31a71f622",
+        "name" : "Validation schema",
+        "source" : "e5e57be31a71f622.json",
+        "type" : "application/json",
+        "size" : 718
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "217820be64b3d98d",
+      "name" : "log",
+      "source" : "217820be64b3d98d.txt",
+      "type" : "text/plain",
+      "size" : 1077
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 4,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673577,
+      "stop" : 1650199673577,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_get_request_info"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_get_request_info"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "request_type",
+    "value" : "<class 'Tests.OrderBook.Requests.AskRequest'>"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "99f15e5bc5dcfe11.json",
+  "parameterValues" : [ "<class 'Tests.OrderBook.Requests.AskRequest'>" ]
+}

@@ -1,0 +1,190 @@
+{
+  "uid" : "e42dc54221bffef2",
+  "name" : "test_snapshot_volume_counter[BidRequest-Bids]",
+  "fullName" : "TestOrderBook.test_get_snapshot#test_snapshot_volume_counter",
+  "historyId" : "2426464277a0e9e0d53c1a16eb65110a",
+  "time" : {
+    "start" : 1650199673632,
+    "stop" : 1650199673635,
+    "duration" : 3
+  },
+  "description" : "\n    Test checks the counter of price's volume in snapshot\n\n    Steps:\n        1. Generate requests\n            E: Requests generated successfully\n        2. Add requests\n            E: Requests added successfully\n        3. Get snapshot\n            E: Snapshot received successfully\n        4. Check volumes\n            E: Volumes are correct\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the counter of price's volume in snapshot\n\nSteps:\n    1. Generate requests\n        E: Requests generated successfully\n    2. Add requests\n        E: Requests added successfully\n    3. Get snapshot\n        E: Snapshot received successfully\n    4. Check volumes\n        E: Volumes are correct\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673632,
+      "stop" : 1650199673632,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the counter of price's volume in snapshot\n\n    Steps:\n        1. Generate requests\n            E: Requests generated successfully\n        2. Add requests\n            E: Requests added successfully\n        3. Get snapshot\n            E: Snapshot received successfully\n        4. Check volumes\n            E: Volumes are correct\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate requests",
+      "time" : {
+        "start" : 1650199673632,
+        "stop" : 1650199673633,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "ee0f260ac0af3eb2",
+        "name" : "Requests",
+        "source" : "ee0f260ac0af3eb2.json",
+        "type" : "application/json",
+        "size" : 1053
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add requests",
+      "time" : {
+        "start" : 1650199673633,
+        "stop" : 1650199673634,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Get snapshot",
+      "time" : {
+        "start" : 1650199673634,
+        "stop" : 1650199673634,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2ffcfbc26a1cbc99",
+        "name" : "Snapshot",
+        "source" : "2ffcfbc26a1cbc99.json",
+        "type" : "application/json",
+        "size" : 181
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Check volumes",
+      "time" : {
+        "start" : 1650199673634,
+        "stop" : 1650199673634,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "ec5abad54c1274d5",
+      "name" : "log",
+      "source" : "ec5abad54c1274d5.txt",
+      "type" : "text/plain",
+      "size" : 8514
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 3,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673635,
+      "stop" : 1650199673635,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_get_snapshot"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_get_snapshot"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "request_type",
+    "value" : "<class 'Tests.OrderBook.Requests.BidRequest'>"
+  }, {
+    "name" : "request_type_snapshot",
+    "value" : "'Bids'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "e42dc54221bffef2.json",
+  "parameterValues" : [ "<class 'Tests.OrderBook.Requests.BidRequest'>", "'Bids'" ]
+}

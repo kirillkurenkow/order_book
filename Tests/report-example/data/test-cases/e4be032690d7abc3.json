@@ -1,0 +1,103 @@
+{
+  "uid" : "e4be032690d7abc3",
+  "name" : "test_price_float",
+  "fullName" : "TestCreateRequest.test_price#test_price_float",
+  "historyId" : "8687f39abd1645a45705f045aea9344d",
+  "time" : {
+    "start" : 1650199673209,
+    "stop" : 1650199673209,
+    "duration" : 0
+  },
+  "description" : "\n    Test checks the possibility of creating a request with a price of type float\n\n    Steps:\n        1. Creating request\n            E: Request created successfully\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of creating a request with a price of type float\n\nSteps:\n    1. Creating request\n        E: Request created successfully\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of creating a request with a price of type float\n\n    Steps:\n        1. Creating request\n            E: Request created successfully\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Creating request",
+      "time" : {
+        "start" : 1650199673209,
+        "stop" : 1650199673209,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d72378fba058fede",
+        "name" : "Request",
+        "source" : "d72378fba058fede.json",
+        "type" : "application/json",
+        "size" : 68
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "57be95ac508195ac",
+      "name" : "log",
+      "source" : "57be95ac508195ac.txt",
+      "type" : "text/plain",
+      "size" : 387
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestCreateRequest"
+  }, {
+    "name" : "suite",
+    "value" : "test_price"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestCreateRequest.test_price"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "e4be032690d7abc3.json",
+  "parameterValues" : [ ]
+}

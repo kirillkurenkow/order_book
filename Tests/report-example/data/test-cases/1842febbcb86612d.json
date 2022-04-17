@@ -1,0 +1,154 @@
+{
+  "uid" : "1842febbcb86612d",
+  "name" : "test_get_empty_snapshot",
+  "fullName" : "TestOrderBook.test_get_snapshot#test_get_empty_snapshot",
+  "historyId" : "3dcb0faf3e24f1e0b25bbd1c7d325ce3",
+  "time" : {
+    "start" : 1650199673647,
+    "stop" : 1650199673648,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of getting an empty snapshot from the OrderBook\n\n    Steps:\n        1. Get snapshot\n            E: Snapshot received successfully\n        2. Validate snapshot\n            E: Validation succeeded\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of getting an empty snapshot from the OrderBook\n\nSteps:\n    1. Get snapshot\n        E: Snapshot received successfully\n    2. Validate snapshot\n        E: Validation succeeded\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673647,
+      "stop" : 1650199673647,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of getting an empty snapshot from the OrderBook\n\n    Steps:\n        1. Get snapshot\n            E: Snapshot received successfully\n        2. Validate snapshot\n            E: Validation succeeded\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Get snapshot",
+      "time" : {
+        "start" : 1650199673647,
+        "stop" : 1650199673647,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e413524ffcfc3d36",
+        "name" : "Snapshot",
+        "source" : "e413524ffcfc3d36.json",
+        "type" : "application/json",
+        "size" : 34
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Validate snapshot",
+      "time" : {
+        "start" : 1650199673647,
+        "stop" : 1650199673648,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "2839b55210a4c4f3",
+        "name" : "Validation schema",
+        "source" : "2839b55210a4c4f3.json",
+        "type" : "application/json",
+        "size" : 1766
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "4ee78d424d6e4782",
+      "name" : "log",
+      "source" : "4ee78d424d6e4782.txt",
+      "type" : "text/plain",
+      "size" : 248
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 3,
+    "stepsCount" : 2,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673648,
+      "stop" : 1650199673648,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_get_snapshot"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_get_snapshot"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "1842febbcb86612d.json",
+  "parameterValues" : [ ]
+}

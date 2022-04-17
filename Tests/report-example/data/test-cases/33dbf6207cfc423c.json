@@ -1,0 +1,193 @@
+{
+  "uid" : "33dbf6207cfc423c",
+  "name" : "test_change_request[90-4-AskRequest]",
+  "fullName" : "TestOrderBook.test_change_request#test_change_request",
+  "historyId" : "0562538221c131e88fb688399f29e4ec",
+  "time" : {
+    "start" : 1650199673427,
+    "stop" : 1650199673428,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of changing a request in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: The function is executed without any exceptions\n        4. Check request changed\n            E: Request changed successfully\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of changing a request in the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Change request\n        E: The function is executed without any exceptions\n    4. Check request changed\n        E: Request changed successfully\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673427,
+      "stop" : 1650199673427,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of changing a request in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: The function is executed without any exceptions\n        4. Check request changed\n            E: Request changed successfully\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673427,
+        "stop" : 1650199673427,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "caff20625a248e82",
+        "name" : "Request",
+        "source" : "caff20625a248e82.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673427,
+        "stop" : 1650199673428,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Change request",
+      "time" : {
+        "start" : 1650199673428,
+        "stop" : 1650199673428,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Check request changed",
+      "time" : {
+        "start" : 1650199673428,
+        "stop" : 1650199673428,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "daf015582b59dc11",
+        "name" : "Request info",
+        "source" : "daf015582b59dc11.json",
+        "type" : "application/json",
+        "size" : 68
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "7e263600449b4f7f",
+      "name" : "log",
+      "source" : "7e263600449b4f7f.txt",
+      "type" : "text/plain",
+      "size" : 1717
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 3,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673429,
+      "stop" : 1650199673429,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_change_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_change_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "new_price",
+    "value" : "90"
+  }, {
+    "name" : "new_volume",
+    "value" : "4"
+  }, {
+    "name" : "request_type",
+    "value" : "<class 'Tests.OrderBook.Requests.AskRequest'>"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "33dbf6207cfc423c.json",
+  "parameterValues" : [ "90", "4", "<class 'Tests.OrderBook.Requests.AskRequest'>" ]
+}

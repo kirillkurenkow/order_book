@@ -1,0 +1,2 @@
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (-100) for the request with id "9"
+[2022-04-17 15:47:53] LINE_71: price: The new price is lower than 0 (-100)

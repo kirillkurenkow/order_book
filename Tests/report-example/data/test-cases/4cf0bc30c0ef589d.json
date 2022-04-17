@@ -1,0 +1,172 @@
+{
+  "uid" : "4cf0bc30c0ef589d",
+  "name" : "test_get_request_info_wrong_request_type",
+  "fullName" : "TestOrderBook.test_get_request_info#test_get_request_info_wrong_request_type",
+  "historyId" : "df27991e3e5bf9338d29631b7a137f80",
+  "time" : {
+    "start" : 1650199673608,
+    "stop" : 1650199673608,
+    "duration" : 0
+  },
+  "description" : "\n    Test checks the possibility of getting a request info with a not existing request type from the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Get request info\n            E: RequestTypeError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of getting a request info with a not existing request type from the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Get request info\n        E: RequestTypeError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestTypeError: The request type should be Ask or Bid: SomeWrongType",
+  "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD594B20>\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestTypeError, strict=True)\n    def test_get_request_info_wrong_request_type(order_book):\n        \"\"\"\n        Test checks the possibility of getting a request info with a not existing request type from the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Get request info\n                E: RequestTypeError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(price=Defaults.price, volume=Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Get request info'):\n>           order_book.get_request_info(request.id, request_type='SomeWrongType')\n\nTestOrderBook\\test_get_request_info.py:127: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:188: in get_request_info\n    return self._get_request(request_id=request_id, request_type=request_type).as_dict\nOrderBook\\OrderBook.py:164: in _get_request\n    self.__check_request_type(request_type)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nrequest_type = 'SomeWrongType'\n\n    @staticmethod\n    def __check_request_type(request_type: str) -> None:\n        \"\"\"\n        request_type validation method\n    \n        :param request_type: Request type\n    \n        :return: None\n        \"\"\"\n        # request_type should be Ask or Bid\n        if request_type not in [RequestTypes.ASK, RequestTypes.BID]:\n            LOGGER.error('request_type is not Ask or Bid (%s)' % request_type)\n>           raise RequestTypeError(\n                f'The request type should be {RequestTypes.ASK} or {RequestTypes.BID}: {request_type}'\n            ) from TypeError\nE           Tests.OrderBook.RequestTypeError: The request type should be Ask or Bid: SomeWrongType\n\nOrderBook\\OrderBook.py:71: RequestTypeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673607,
+      "stop" : 1650199673607,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of getting a request info with a not existing request type from the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Get request info\n            E: RequestTypeError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestTypeError: The request type should be Ask or Bid: SomeWrongType",
+    "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD594B20>\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestTypeError, strict=True)\n    def test_get_request_info_wrong_request_type(order_book):\n        \"\"\"\n        Test checks the possibility of getting a request info with a not existing request type from the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Get request info\n                E: RequestTypeError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(price=Defaults.price, volume=Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Get request info'):\n>           order_book.get_request_info(request.id, request_type='SomeWrongType')\n\nTestOrderBook\\test_get_request_info.py:127: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:188: in get_request_info\n    return self._get_request(request_id=request_id, request_type=request_type).as_dict\nOrderBook\\OrderBook.py:164: in _get_request\n    self.__check_request_type(request_type)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nrequest_type = 'SomeWrongType'\n\n    @staticmethod\n    def __check_request_type(request_type: str) -> None:\n        \"\"\"\n        request_type validation method\n    \n        :param request_type: Request type\n    \n        :return: None\n        \"\"\"\n        # request_type should be Ask or Bid\n        if request_type not in [RequestTypes.ASK, RequestTypes.BID]:\n            LOGGER.error('request_type is not Ask or Bid (%s)' % request_type)\n>           raise RequestTypeError(\n                f'The request type should be {RequestTypes.ASK} or {RequestTypes.BID}: {request_type}'\n            ) from TypeError\nE           Tests.OrderBook.RequestTypeError: The request type should be Ask or Bid: SomeWrongType\n\nOrderBook\\OrderBook.py:71: RequestTypeError",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673608,
+        "stop" : 1650199673608,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a3ca7d095330155a",
+        "name" : "Request",
+        "source" : "a3ca7d095330155a.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673608,
+        "stop" : 1650199673608,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Get request info",
+      "time" : {
+        "start" : 1650199673608,
+        "stop" : 1650199673608,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestTypeError: The request type should be Ask or Bid: SomeWrongType\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_get_request_info.py\", line 127, in test_get_request_info_wrong_request_type\n    order_book.get_request_info(request.id, request_type='SomeWrongType')\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 188, in get_request_info\n    return self._get_request(request_id=request_id, request_type=request_type).as_dict\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 164, in _get_request\n    self.__check_request_type(request_type)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 71, in __check_request_type\n    raise RequestTypeError(\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "df8ccde63e9d7acb",
+      "name" : "log",
+      "source" : "df8ccde63e9d7acb.txt",
+      "type" : "text/plain",
+      "size" : 942
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 2,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673613,
+      "stop" : 1650199673613,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestTypeError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_get_request_info"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_get_request_info"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestTypeError'>, strict=True)" ]
+  },
+  "source" : "4cf0bc30c0ef589d.json",
+  "parameterValues" : [ ]
+}

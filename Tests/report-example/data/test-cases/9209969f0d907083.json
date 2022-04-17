@@ -1,0 +1,109 @@
+{
+  "uid" : "9209969f0d907083",
+  "name" : "test_wrong_volume_type[5]",
+  "fullName" : "TestCreateRequest.test_volume#test_wrong_volume_type",
+  "historyId" : "190deefa643f658a7e5461e7187607cb",
+  "time" : {
+    "start" : 1650199673298,
+    "stop" : 1650199673298,
+    "duration" : 0
+  },
+  "description" : "\n    Test checks the possibility of creating a request with a volume of the wrong type\n\n    Steps:\n        1. Creating request\n            E: Request not created\n            E: RequestVolumeError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of creating a request with a volume of the wrong type\n\nSteps:\n    1. Creating request\n        E: Request not created\n        E: RequestVolumeError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.",
+  "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\nvolume = '5'\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestVolumeError, strict=True)\n    @pytest.mark.parametrize('volume', [\n        f'{Defaults.volume}',\n        [Defaults.volume],\n        {Defaults.volume},\n        None,\n        1.5,\n    ])\n    def test_wrong_volume_type(volume):\n        \"\"\"\n        Test checks the possibility of creating a request with a volume of the wrong type\n    \n        Steps:\n            1. Creating request\n                E: Request not created\n                E: RequestVolumeError raised\n        \"\"\"\n        with step('Creating request'):\n>           Request(price=Defaults.price, volume=volume)  # noqa\n\nTestCreateRequest\\test_volume.py:83: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\Requests.py:40: in __init__\n    self.volume = volume\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.Request object at 0x0000029EBD627070>\nvalue = '5'\n\n    @volume.setter\n    def volume(self, value) -> None:\n        \"\"\"\n        Request volume setter\n    \n        :param value: New request volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The Volume should be an instance of int\n        if not isinstance(value, int):\n            LOGGER.error('The new volume is not an int instance (%s)' % type(value))\n>           raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\nE           Tests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.\n\nOrderBook\\Requests.py:100: RequestVolumeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of creating a request with a volume of the wrong type\n\n    Steps:\n        1. Creating request\n            E: Request not created\n            E: RequestVolumeError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.",
+    "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\nvolume = '5'\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestVolumeError, strict=True)\n    @pytest.mark.parametrize('volume', [\n        f'{Defaults.volume}',\n        [Defaults.volume],\n        {Defaults.volume},\n        None,\n        1.5,\n    ])\n    def test_wrong_volume_type(volume):\n        \"\"\"\n        Test checks the possibility of creating a request with a volume of the wrong type\n    \n        Steps:\n            1. Creating request\n                E: Request not created\n                E: RequestVolumeError raised\n        \"\"\"\n        with step('Creating request'):\n>           Request(price=Defaults.price, volume=volume)  # noqa\n\nTestCreateRequest\\test_volume.py:83: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\Requests.py:40: in __init__\n    self.volume = volume\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.Request object at 0x0000029EBD627070>\nvalue = '5'\n\n    @volume.setter\n    def volume(self, value) -> None:\n        \"\"\"\n        Request volume setter\n    \n        :param value: New request volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The Volume should be an instance of int\n        if not isinstance(value, int):\n            LOGGER.error('The new volume is not an int instance (%s)' % type(value))\n>           raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\nE           Tests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.\n\nOrderBook\\Requests.py:100: RequestVolumeError",
+    "steps" : [ {
+      "name" : "Creating request",
+      "time" : {
+        "start" : 1650199673298,
+        "stop" : 1650199673298,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestCreateRequest\\test_volume.py\", line 83, in test_wrong_volume_type\n    Request(price=Defaults.price, volume=volume)  # noqa\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\Requests.py\", line 40, in __init__\n    self.volume = volume\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\Requests.py\", line 100, in volume\n    raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "4f974246182e6df3",
+      "name" : "log",
+      "source" : "4f974246182e6df3.txt",
+      "type" : "text/plain",
+      "size" : 361
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestVolumeError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestCreateRequest"
+  }, {
+    "name" : "suite",
+    "value" : "test_volume"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestCreateRequest.test_volume"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "volume",
+    "value" : "'5'"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestVolumeError'>, strict=True)" ]
+  },
+  "source" : "9209969f0d907083.json",
+  "parameterValues" : [ "'5'" ]
+}

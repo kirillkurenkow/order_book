@@ -1,0 +1,196 @@
+{
+  "uid" : "b9e34915a73898dc",
+  "name" : "test_snapshot_prices_order_bid",
+  "fullName" : "TestOrderBook.test_get_snapshot#test_snapshot_prices_order_bid",
+  "historyId" : "3a84ff06b501e117a30ebf1ca748dafd",
+  "time" : {
+    "start" : 1650199673643,
+    "stop" : 1650199673645,
+    "duration" : 2
+  },
+  "description" : "\n        Test checks the BID prices order in snapshot\n\n        Steps:\n            1. Generate requests\n                E: Requests generated successfully\n            2. Add requests\n                E: Requests added successfully\n            3. Get snapshot\n                E: Snapshot received successfully\n            4. Check prices order\n                E: Prices are in the correct order\n        ",
+  "descriptionHtml" : "<pre><code>    Test checks the BID prices order in snapshot\n\n    Steps:\n        1. Generate requests\n            E: Requests generated successfully\n        2. Add requests\n            E: Requests added successfully\n        3. Get snapshot\n            E: Snapshot received successfully\n        4. Check prices order\n            E: Prices are in the correct order\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673642,
+      "stop" : 1650199673642,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n        Test checks the BID prices order in snapshot\n\n        Steps:\n            1. Generate requests\n                E: Requests generated successfully\n            2. Add requests\n                E: Requests added successfully\n            3. Get snapshot\n                E: Snapshot received successfully\n            4. Check prices order\n                E: Prices are in the correct order\n        ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate requests",
+      "time" : {
+        "start" : 1650199673643,
+        "stop" : 1650199673644,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "7c8730c6bacb4ca2",
+        "name" : "Requests",
+        "source" : "7c8730c6bacb4ca2.json",
+        "type" : "application/json",
+        "size" : 952
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add requests",
+      "time" : {
+        "start" : 1650199673644,
+        "stop" : 1650199673645,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Get snapshot",
+      "time" : {
+        "start" : 1650199673645,
+        "stop" : 1650199673645,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "1e9ff582dcdf43f9",
+        "name" : "Snapshot",
+        "source" : "1e9ff582dcdf43f9.json",
+        "type" : "application/json",
+        "size" : 748
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Check prices order",
+      "time" : {
+        "start" : 1650199673645,
+        "stop" : 1650199673645,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "a36e1c5827cc2416",
+        "name" : "Expected prices",
+        "source" : "a36e1c5827cc2416.json",
+        "type" : "application/json",
+        "size" : 92
+      }, {
+        "uid" : "d71ab3e79c80375d",
+        "name" : "Real prices",
+        "source" : "d71ab3e79c80375d.json",
+        "type" : "application/json",
+        "size" : 92
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 2,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "dcd2564eccd46d7",
+      "name" : "log",
+      "source" : "dcd2564eccd46d7.txt",
+      "type" : "text/plain",
+      "size" : 7966
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 5,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673646,
+      "stop" : 1650199673646,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_get_snapshot"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_get_snapshot"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "b9e34915a73898dc.json",
+  "parameterValues" : [ ]
+}

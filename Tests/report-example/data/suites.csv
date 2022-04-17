@@ -1,0 +1,726 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_price","","","","test_wrong_price_type[price1]","
+    Test checks the possibility of creating a request with a price of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestPriceError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_remove_request","","","","test_remove_request_wrong_request_type","
+    Test checks the possibility of removing a request with wrong type from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: RequestWasNotFoundError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_price","","","","test_price_int","
+    Test checks the possibility of creating a request with a price of type int
+
+    Steps:
+        1. Creating request
+            E: Request created successfully
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_request","","","","test_add_not_a_request[request_0]","
+    Test checks the possibility of adding not a Request object to the OrderBook
+
+    Steps:
+        1. Add not a request
+            E: Request not added
+            E: RequestError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_volume","","","","test_volume","
+    Test checks the possibility of creating a request with a volume of type int
+
+    Steps:
+        1. Creating request
+            E: Request created successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_get_snapshot","","","","test_snapshot_volume_counter[AskRequest-Asks]","
+    Test checks the counter of price's volume in snapshot
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Check volumes
+            E: Volumes are correct
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_mutiple_requests","","","","test_added_list_not_changed","
+    Test checks that the list of requests has not changed during the execution of the add_multiple_requests function
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add multiple requests
+            E: Requests added successfully
+        3. Check that requests list has not changed
+            E: Requests list has not changed
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_remove_request","","","","test_remove_not_existing_request_type","
+    Test checks the possibility of removing a request with a non-existent type from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: RequestTypeError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_mutiple_requests","","","","test_add_multiple_requests[list]","
+    Test checks the possibility of adding multiple requests to the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_add_mutiple_requests","","","","test_add_multiple_requests_all_errors","
+    Test checks the possibility of adding multiple requests when all of them have errors to the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Add multiple requests
+            E: No requests were added
+            E: List of tuples (Request, Error) with error requests was received as a result of the function execution
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestCreateRequest","test_id","","","","test_id_order","
+    Test checks request id assignment order
+
+    Steps:
+        1. Creating requests
+            E: Requests created successfully
+        2. Check id order
+            E: Requests received id in correct order
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_wrong_new_price[0]","
+    Test checks the possibility of changing a request price to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestPriceError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_add_mutiple_requests","","","","test_add_multiple_requests_with_errors","
+    Test checks the possibility of adding multiple requests when some of them have errors to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Generate requests
+            E: Requests generated successfully
+        4. Add multiple requests
+            E: Requests without errors added successfully
+            E: List of tuples (Request, Error) with error requests was received as a result of the function execution
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_add_request","","","","test_add_request[BidRequest]","
+    Test checks the possibility of adding a single request to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Check that the request exists
+            E: Request exists
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_same_values[BidRequest]","
+    Test checks the possibility of changing a request info to the same values in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request info
+            E: The request info is the same as before
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[110-6-AskRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_remove_request","","","","test_remove_request[BidRequest]","
+    Test checks the possibility of removing a request from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: The function is executed without any exceptions
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_request","","","","test_add_existing_request","
+    Test checks the possibility of adding an existing request to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Add existing request
+            E: Request not added
+            E: RequestAlreadyExistsError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","3","TestOrderBook","test_get_snapshot","","","","test_snapshot_volume_counter[BidRequest-Bids]","
+    Test checks the counter of price's volume in snapshot
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Check volumes
+            E: Volumes are correct
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_change_request","","","","test_change_nothing","
+    Test checks the possibility of using change_request_info() function without price or volume arg
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Execute change_request_info() without price and volume args
+            E: ValueError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_change_request","","","","test_change_wrong_new_volume[5]","
+    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestVolumeError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","4","TestOrderBook","test_get_snapshot","","","","test_snapshot_prices_order_ask","
+    Test checks the ASK prices order in snapshot
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Check prices order
+            E: Prices are in the correct order
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_get_snapshot","","","","test_snapshot_prices_order_bid","
+        Test checks the BID prices order in snapshot
+
+        Steps:
+            1. Generate requests
+                E: Requests generated successfully
+            2. Add requests
+                E: Requests added successfully
+            3. Get snapshot
+                E: Snapshot received successfully
+            4. Check prices order
+                E: Prices are in the correct order
+        "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_price","","","","test_wrong_price_type[100]","
+    Test checks the possibility of creating a request with a price of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestPriceError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_request","","","","test_add_request_with_existing_id","
+    Test checks the possibility of adding a request with existing id to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Add request with the same id
+            E: Request not added
+            E: RequestAlreadyExistsError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_remove_request","","","","test_remove_not_existing_request","
+    Test checks the possibility of removing a not existing request from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: RequestWasNotFoundError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_get_request_info","","","","test_get_request_info[BidRequest]","
+    Test checks the possibility of getting a request info from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Get request info
+            E: Request info received successfully
+        4. Validate request info
+            E: Validation succeeded
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_get_snapshot","","","","test_change_snapshot","
+    Test checks the possibility of changing a snapshot dict object from the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Change snapshot
+            E: Snapshot dict object changed
+        5. Get snapshot
+            E: Snapshot received successfully
+        6. Check snapshot not changed
+            E: Snapshot is the same as in the step 3
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_price","","","","test_wrong_price_type[None]","
+    Test checks the possibility of creating a request with a price of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestPriceError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_wrong_new_price[100]","
+    Test checks the possibility of changing a request price to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestPriceError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_volume","","","","test_negative_volume","
+    Test checks the possibility of creating a request with a volume of a negative value
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_get_request_info","","","","test_get_not_existing_request_type_info","
+    Test checks the possibility of getting a request info with a wrong request type from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Get request info
+            E: RequestWasNotFoundError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[None-6-AskRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_volume","","","","test_wrong_volume_type[volume1]","
+    Test checks the possibility of creating a request with a volume of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_wrong_new_volume[0]","
+    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestVolumeError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[110-None-AskRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_price","","","","test_wrong_price_type[price2]","
+    Test checks the possibility of creating a request with a price of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestPriceError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[110-6-BidRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[None-6-BidRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_add_mutiple_requests","","","","test_add_0_requests","
+    Test checks the possibility of adding 0 requests with add_multiple_requests function to the OrderBook
+
+    Steps:
+        1. Add multiple requests
+            E: The function is executed without any exceptions
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_volume","","","","test_wrong_volume_type[volume2]","
+    Test checks the possibility of creating a request with a volume of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_get_request_info","","","","test_get_request_info[AskRequest]","
+    Test checks the possibility of getting a request info from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Get request info
+            E: Request info received successfully
+        4. Validate request info
+            E: Validation succeeded
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_price","","","","test_negative_price","
+    Test checks the possibility of creating a request with a price of a negative value
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestPriceError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_request","","","","test_add_request[AskRequest]","
+    Test checks the possibility of adding a single request to the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Check that the request exists
+            E: Request exists
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_add_mutiple_requests","","","","test_add_multiple_requests[tuple]","
+    Test checks the possibility of adding multiple requests to the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_not_existing_request","
+    Test checks the possibility of changing a not existing request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request with not existing id
+            E: RequestWasNotFoundError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_get_request_info","","","","test_get_request_info_wrong_request_type","
+    Test checks the possibility of getting a request info with a not existing request type from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Get request info
+            E: RequestTypeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_volume","","","","test_wrong_volume_type[5]","
+    Test checks the possibility of creating a request with a volume of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_change_request","","","","test_change_wrong_new_price[-100]","
+    Test checks the possibility of changing a request price to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestPriceError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_wrong_new_volume[-5]","
+    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestVolumeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_price","","","","test_zero_price","
+    Test checks the possibility of creating a request with a price of zero value
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestPriceError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_get_snapshot","","","","test_get_empty_snapshot","
+    Test checks the possibility of getting an empty snapshot from the OrderBook
+
+    Steps:
+        1. Get snapshot
+            E: Snapshot received successfully
+        2. Validate snapshot
+            E: Validation succeeded
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request_type","
+    Test checks the possibility of changing a request type in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: TypeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_wrong_new_volume[5.0]","
+    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: RequestVolumeError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_price","","","","test_price_float","
+    Test checks the possibility of creating a request with a price of type float
+
+    Steps:
+        1. Creating request
+            E: Request created successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_add_mutiple_requests","","","","test_add_multiple_requests[set]","
+    Test checks the possibility of adding multiple requests to the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","3","TestOrderBook","test_get_snapshot","","","","test_get_snapshot","
+    Test checks the possibility of getting a snapshot with multiple requests from the OrderBook
+
+    Steps:
+        1. Generate requests
+            E: Requests generated successfully
+        2. Add requests
+            E: Requests added successfully
+        3. Get snapshot
+            E: Snapshot received successfully
+        4. Check prices
+            E: Prices are correct
+        5. Validate snapshot
+            E: Validation succeeded
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[110-None-BidRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","2","TestOrderBook","test_remove_request","","","","test_remove_request[AskRequest]","
+    Test checks the possibility of removing a request from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Remove request
+            E: The function is executed without any exceptions
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[90-4-BidRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_same_values[AskRequest]","
+    Test checks the possibility of changing a request info to the same values in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request info
+            E: The request info is the same as before
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestCreateRequest","test_volume","","","","test_wrong_volume_type[1.5]","
+    Test checks the possibility of creating a request with a volume of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_get_request_info","","","","test_get_not_existing_request_info","
+    Test checks the possibility of getting a not existing request info from the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Get not existing request info
+            E: RequestWasNotFoundError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","0","TestOrderBook","test_add_request","","","","test_add_not_a_request[{'id': 1, 'price': 100, 'volume': 5, 'type': 'Bid'}]","
+    Test checks the possibility of adding not a Request object to the OrderBook
+
+    Steps:
+        1. Add not a request
+            E: Request not added
+            E: RequestError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_volume","","","","test_wrong_volume_type[None]","
+    Test checks the possibility of creating a request with a volume of the wrong type
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request_id","
+    Test checks the possibility of changing a request id in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: TypeError raised
+    "
+"passed","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestOrderBook","test_change_request","","","","test_change_request[90-4-AskRequest]","
+    Test checks the possibility of changing a request in the OrderBook
+
+    Steps:
+        1. Generate request
+            E: Request generated successfully
+        2. Add request
+            E: Request added successfully
+        3. Change request
+            E: The function is executed without any exceptions
+        4. Check request changed
+            E: Request changed successfully
+    "
+"skipped","Sun Apr 17 15:47:53 MSK 2022","Sun Apr 17 15:47:53 MSK 2022","1","TestCreateRequest","test_volume","","","","test_zero_volume","
+    Test checks the possibility of creating a request with a volume of zero value
+
+    Steps:
+        1. Creating request
+            E: Request not created
+            E: RequestVolumeError raised
+    "

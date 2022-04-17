@@ -1,0 +1,81 @@
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (100) for the request with id "0"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "0"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 0, 'price': 100, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (101) for the request with id "1"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "1"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 1, 'price': 101, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (102) for the request with id "2"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "2"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 2, 'price': 102, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (103) for the request with id "3"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "3"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 3, 'price': 103, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (104) for the request with id "4"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "4"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 4, 'price': 104, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (105) for the request with id "5"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "5"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 5, 'price': 105, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (106) for the request with id "6"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "6"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 6, 'price': 106, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (107) for the request with id "7"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "7"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 7, 'price': 107, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (108) for the request with id "8"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "8"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 8, 'price': 108, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (109) for the request with id "9"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "9"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 9, 'price': 109, 'volume': 5, 'type': ''}
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "0"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "0" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 1, 'price': 101, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "1"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "1" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 2, 'price': 102, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "2"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "2" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 3, 'price': 103, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "3"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "3" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 4, 'price': 104, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "4"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "4" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 5, 'price': 105, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "5"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "5" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 6, 'price': 106, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "6"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "6" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 7, 'price': 107, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "7"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "7" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 8, 'price': 108, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "8"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "8" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 9, 'price': 109, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_156: _get_request: Trying to find the request with id "9"
+[2022-04-17 15:47:53] LINE_173: _get_request: The request with id "9" was not found
+[2022-04-17 15:47:53] LINE_103: add_request: The request was added successfully
+[2022-04-17 15:47:53] LINE_252: get_snapshot: A new snapshot was created: {'Asks': [{'price': 109, 'volume': 5}, {'price': 108, 'volume': 5}, {'price': 107, 'volume': 5}, {'price': 106, 'volume': 5}, {'price': 105, 'volume': 5}, {'price': 104, 'volume': 5}, {'price': 103, 'volume': 5}, {'price': 102, 'volume': 5}, {'price': 101, 'volume': 5}, {'price': 100, 'volume': 5}], 'Bids': []}

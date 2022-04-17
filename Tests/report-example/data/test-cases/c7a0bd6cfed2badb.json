@@ -1,0 +1,172 @@
+{
+  "uid" : "c7a0bd6cfed2badb",
+  "name" : "test_change_nothing",
+  "fullName" : "TestOrderBook.test_change_request#test_change_nothing",
+  "historyId" : "d2a38195e0a12103f0e7852324a4dee6",
+  "time" : {
+    "start" : 1650199673561,
+    "stop" : 1650199673561,
+    "duration" : 0
+  },
+  "description" : "\n    Test checks the possibility of using change_request_info() function without price or volume arg\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Execute change_request_info() without price and volume args\n            E: ValueError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of using change_request_info() function without price or volume arg\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Execute change_request_info() without price and volume args\n        E: ValueError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nValueError: Either price or volume should be specified",
+  "statusTrace" : "order_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD5C73D0>\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=ValueError, strict=True)\n    def test_change_nothing(order_book):\n        \"\"\"\n        Test checks the possibility of using change_request_info() function without price or volume arg\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Execute change_request_info() without price and volume args\n                E: ValueError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id)\n\nTestOrderBook\\test_change_request.py:243: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD5C73D0>\nrequest_id = 0, price = None, volume = None\n\n    def change_request_info(self, request_id: int, price: Optional[PRICE_TYPE] = None,\n                            volume: Optional[int] = None) -> None:\n        \"\"\"\n        Method for changing a request info in the requests list\n    \n        :param request_id: Request id\n        :param price: New price\n        :param volume: New volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug('Trying to change the request info (request_id: %s)' % request_id)\n    \n        # Either price or volume should be specified\n        if not any([x is not None for x in (price, volume)]):\n            LOGGER.error('None of price or volume were specified')\n>           raise ValueError('Either price or volume should be specified')\nE           ValueError: Either price or volume should be specified\n\nOrderBook\\OrderBook.py:206: ValueError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673560,
+      "stop" : 1650199673560,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of using change_request_info() function without price or volume arg\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Execute change_request_info() without price and volume args\n            E: ValueError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nValueError: Either price or volume should be specified",
+    "statusTrace" : "order_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD5C73D0>\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=ValueError, strict=True)\n    def test_change_nothing(order_book):\n        \"\"\"\n        Test checks the possibility of using change_request_info() function without price or volume arg\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Execute change_request_info() without price and volume args\n                E: ValueError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id)\n\nTestOrderBook\\test_change_request.py:243: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD5C73D0>\nrequest_id = 0, price = None, volume = None\n\n    def change_request_info(self, request_id: int, price: Optional[PRICE_TYPE] = None,\n                            volume: Optional[int] = None) -> None:\n        \"\"\"\n        Method for changing a request info in the requests list\n    \n        :param request_id: Request id\n        :param price: New price\n        :param volume: New volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug('Trying to change the request info (request_id: %s)' % request_id)\n    \n        # Either price or volume should be specified\n        if not any([x is not None for x in (price, volume)]):\n            LOGGER.error('None of price or volume were specified')\n>           raise ValueError('Either price or volume should be specified')\nE           ValueError: Either price or volume should be specified\n\nOrderBook\\OrderBook.py:206: ValueError",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673561,
+        "stop" : 1650199673561,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "af45018a1f2880c5",
+        "name" : "Request",
+        "source" : "af45018a1f2880c5.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673561,
+        "stop" : 1650199673561,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Change request",
+      "time" : {
+        "start" : 1650199673561,
+        "stop" : 1650199673561,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "ValueError: Either price or volume should be specified\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_change_request.py\", line 243, in test_change_nothing\n    order_book.change_request_info(request.id)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 206, in change_request_info\n    raise ValueError('Either price or volume should be specified')\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "f4dd3ef1d7778d2e",
+      "name" : "log",
+      "source" : "f4dd3ef1d7778d2e.txt",
+      "type" : "text/plain",
+      "size" : 952
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 2,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673565,
+      "stop" : 1650199673565,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'ValueError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_change_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_change_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "@pytest.mark.xfail(raises=<class 'ValueError'>, strict=True)", "negative" ]
+  },
+  "source" : "c7a0bd6cfed2badb.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,190 @@
+{
+  "uid" : "8fa7b71b7a7fac83",
+  "name" : "test_add_multiple_requests_with_errors",
+  "fullName" : "TestOrderBook.test_add_mutiple_requests#test_add_multiple_requests_with_errors",
+  "historyId" : "33ef240e5da7cdb723000ee4b6aa599e",
+  "time" : {
+    "start" : 1650199673355,
+    "stop" : 1650199673357,
+    "duration" : 2
+  },
+  "description" : "\n    Test checks the possibility of adding multiple requests when some of them have errors to the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Generate requests\n            E: Requests generated successfully\n        4. Add multiple requests\n            E: Requests without errors added successfully\n            E: List of tuples (Request, Error) with error requests was received as a result of the function execution\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of adding multiple requests when some of them have errors to the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Generate requests\n        E: Requests generated successfully\n    4. Add multiple requests\n        E: Requests without errors added successfully\n        E: List of tuples (Request, Error) with error requests was received as a result of the function execution\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673355,
+      "stop" : 1650199673355,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of adding multiple requests when some of them have errors to the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Generate requests\n            E: Requests generated successfully\n        4. Add multiple requests\n            E: Requests without errors added successfully\n            E: List of tuples (Request, Error) with error requests was received as a result of the function execution\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673355,
+        "stop" : 1650199673356,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d2614302bac3ee1f",
+        "name" : "Request ask",
+        "source" : "d2614302bac3ee1f.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673356,
+        "stop" : 1650199673356,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Generate requests",
+      "time" : {
+        "start" : 1650199673356,
+        "stop" : 1650199673356,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "58afe326d3e80885",
+        "name" : "Requests",
+        "source" : "58afe326d3e80885.json",
+        "type" : "application/json",
+        "size" : 192
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add multiple requests",
+      "time" : {
+        "start" : 1650199673356,
+        "stop" : 1650199673356,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "fbd9efd9e6dabb95",
+        "name" : "Requests with error",
+        "source" : "fbd9efd9e6dabb95.json",
+        "type" : "application/json",
+        "size" : 170
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b2c234ab8cdd6513",
+      "name" : "log",
+      "source" : "b2c234ab8cdd6513.txt",
+      "type" : "text/plain",
+      "size" : 1714
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 4,
+    "stepsCount" : 4,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673357,
+      "stop" : 1650199673357,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_mutiple_requests"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_add_mutiple_requests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "8fa7b71b7a7fac83.json",
+  "parameterValues" : [ ]
+}

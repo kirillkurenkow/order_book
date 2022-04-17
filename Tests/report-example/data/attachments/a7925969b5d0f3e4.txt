@@ -1,0 +1,2 @@
+[2022-04-17 15:47:53] LINE_83: add_request: Trying to add a new request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}
+[2022-04-17 15:47:53] LINE_87: add_request: The request is not an instance of the Request (<class 'dict'>)

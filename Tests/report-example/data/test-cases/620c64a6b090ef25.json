@@ -1,0 +1,139 @@
+{
+  "uid" : "620c64a6b090ef25",
+  "name" : "test_add_not_a_request[request_0]",
+  "fullName" : "TestOrderBook.test_add_request#test_add_not_a_request",
+  "historyId" : "08648a21f5b0e2985610eb6e368efa9e",
+  "time" : {
+    "start" : 1650199673403,
+    "stop" : 1650199673404,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of adding not a Request object to the OrderBook\n\n    Steps:\n        1. Add not a request\n            E: Request not added\n            E: RequestError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of adding not a Request object to the OrderBook\n\nSteps:\n    1. Add not a request\n        E: Request not added\n        E: RequestError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.",
+  "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD2C7A60>\nrequest_ = {'id': 0, 'price': 100, 'type': 'Ask', 'volume': 5}\n\n    @pytest.mark.negative\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.parametrize('request_', [\n        AskRequest(Defaults.price, Defaults.volume).as_dict,\n        str(BidRequest(Defaults.price, Defaults.volume).as_dict),\n    ])\n    @pytest.mark.xfail(raises=RequestError, strict=True)\n    def test_add_not_a_request(order_book, request_):\n        \"\"\"\n        Test checks the possibility of adding not a Request object to the OrderBook\n    \n        Steps:\n            1. Add not a request\n                E: Request not added\n                E: RequestError raised\n        \"\"\"\n        with step('Add not a request'):\n>           order_book.add_request(request_)\n\nTestOrderBook\\test_add_request.py:119: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD2C7A60>\nrequest = {'id': 0, 'price': 100, 'type': 'Ask', 'volume': 5}\n\n    def add_request(self, request: Request) -> None:\n        \"\"\"\n        Method for adding a new request to the requests list\n    \n        :param request: Request object\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug('Trying to add a new request: %s' % str(request))\n    \n        # The request must be an instance of the Request\n        if not isinstance(request, Request):\n            LOGGER.error('The request is not an instance of the Request (%s)' % type(request))\n>           raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError\nE           Tests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.\n\nOrderBook\\OrderBook.py:88: RequestError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673403,
+      "stop" : 1650199673403,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of adding not a Request object to the OrderBook\n\n    Steps:\n        1. Add not a request\n            E: Request not added\n            E: RequestError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.",
+    "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD2C7A60>\nrequest_ = {'id': 0, 'price': 100, 'type': 'Ask', 'volume': 5}\n\n    @pytest.mark.negative\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.parametrize('request_', [\n        AskRequest(Defaults.price, Defaults.volume).as_dict,\n        str(BidRequest(Defaults.price, Defaults.volume).as_dict),\n    ])\n    @pytest.mark.xfail(raises=RequestError, strict=True)\n    def test_add_not_a_request(order_book, request_):\n        \"\"\"\n        Test checks the possibility of adding not a Request object to the OrderBook\n    \n        Steps:\n            1. Add not a request\n                E: Request not added\n                E: RequestError raised\n        \"\"\"\n        with step('Add not a request'):\n>           order_book.add_request(request_)\n\nTestOrderBook\\test_add_request.py:119: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD2C7A60>\nrequest = {'id': 0, 'price': 100, 'type': 'Ask', 'volume': 5}\n\n    def add_request(self, request: Request) -> None:\n        \"\"\"\n        Method for adding a new request to the requests list\n    \n        :param request: Request object\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug('Trying to add a new request: %s' % str(request))\n    \n        # The request must be an instance of the Request\n        if not isinstance(request, Request):\n            LOGGER.error('The request is not an instance of the Request (%s)' % type(request))\n>           raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError\nE           Tests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.\n\nOrderBook\\OrderBook.py:88: RequestError",
+    "steps" : [ {
+      "name" : "Add not a request",
+      "time" : {
+        "start" : 1650199673403,
+        "stop" : 1650199673403,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_add_request.py\", line 119, in test_add_not_a_request\n    order_book.add_request(request_)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 88, in add_request\n    raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "a7925969b5d0f3e4",
+      "name" : "log",
+      "source" : "a7925969b5d0f3e4.txt",
+      "type" : "text/plain",
+      "size" : 231
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1,
+    "stepsCount" : 1,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673407,
+      "stop" : 1650199673407,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_add_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "request_",
+    "value" : "{'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestError'>, strict=True)" ]
+  },
+  "source" : "620c64a6b090ef25.json",
+  "parameterValues" : [ "{'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}" ]
+}

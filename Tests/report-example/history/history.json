@@ -1,0 +1,1328 @@
+{
+  "ae75ff02846837a6c719def7681948f7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6425323c47844679",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestWasNotFoundError: The request with id \"1\" was not found.",
+      "time" : {
+        "start" : 1650199673545,
+        "stop" : 1650199673546,
+        "duration" : 1
+      }
+    } ]
+  },
+  "2f46e379c3480521426d6c7e665c3f3b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "32fe9b7ea7d7b3b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673207,
+        "stop" : 1650199673207,
+        "duration" : 0
+      }
+    } ]
+  },
+  "33ef240e5da7cdb723000ee4b6aa599e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8fa7b71b7a7fac83",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673355,
+        "stop" : 1650199673357,
+        "duration" : 2
+      }
+    } ]
+  },
+  "0caf8b7d7f87a5d17449e99a23674169" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c22360991d66fd1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673340,
+        "stop" : 1650199673341,
+        "duration" : 1
+      }
+    } ]
+  },
+  "d4630588ff02c7d1cafa5b757d64525d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2cc17d1c5366a049",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673653,
+        "stop" : 1650199673655,
+        "duration" : 2
+      }
+    } ]
+  },
+  "6fa823891eef30b5efc58909be620350" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8cacc48fa34fd5fa",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTypeError: OrderBook.change_request_info() got an unexpected keyword argument 'id'",
+      "time" : {
+        "start" : 1650199673462,
+        "stop" : 1650199673463,
+        "duration" : 1
+      }
+    } ]
+  },
+  "654eb82df8d0bfbab574f769a009dc04" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "444832579ab3a1de",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be an instance of int or float, got <class 'str'>.",
+      "time" : {
+        "start" : 1650199673492,
+        "stop" : 1650199673493,
+        "duration" : 1
+      }
+    } ]
+  },
+  "eea32a57fca026e3a9715ef4424f0164" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "643e9ea9d8eb68ff",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume can not be lower than 1.",
+      "time" : {
+        "start" : 1650199673281,
+        "stop" : 1650199673281,
+        "duration" : 0
+      }
+    } ]
+  },
+  "d2e9936306a8c7322c9b6b42a68f5d3a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c6b7c2567e6284e2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673420,
+        "stop" : 1650199673421,
+        "duration" : 1
+      }
+    } ]
+  },
+  "195a49aad940d91457553a4fa545b47e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2e5f54b50d3d095f",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 1, 'price': 100, 'volume': 5, 'type': 'Bid'}.",
+      "time" : {
+        "start" : 1650199673409,
+        "stop" : 1650199673409,
+        "duration" : 0
+      }
+    } ]
+  },
+  "d15eb379744f17064c9dbfbd4ede6489" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9d46f39fb7f00796",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be an instance of int or float, got <class 'set'>.",
+      "time" : {
+        "start" : 1650199673263,
+        "stop" : 1650199673264,
+        "duration" : 1
+      }
+    } ]
+  },
+  "364036e799ded69e3aba95c64974f10c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "be3098a3e124c2fc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673579,
+        "stop" : 1650199673580,
+        "duration" : 1
+      }
+    } ]
+  },
+  "8fe2f166486056e1ec2cb2f8a63dab1a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "231ff9c8512eb71e",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.",
+      "time" : {
+        "start" : 1650199673531,
+        "stop" : 1650199673531,
+        "duration" : 0
+      }
+    } ]
+  },
+  "ef460bab3b56cc9c3b99dbf987f14fa9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7adacd3fb6381c91",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestAlreadyExistsError: The request with id \"0\" is already exists.",
+      "time" : {
+        "start" : 1650199673387,
+        "stop" : 1650199673388,
+        "duration" : 1
+      }
+    } ]
+  },
+  "48c7cb648c98c554dc0f7cd30d1d8461" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "861781ca536f3e8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673363,
+        "stop" : 1650199673364,
+        "duration" : 1
+      }
+    } ]
+  },
+  "6284068c467366d473eb16fb75bbc558" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3a80eb05a993e430",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'list'>.",
+      "time" : {
+        "start" : 1650199673309,
+        "stop" : 1650199673309,
+        "duration" : 0
+      }
+    } ]
+  },
+  "060209d8f91496bef85fb70ea3b93847" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9b0e7a8f60861242",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673279,
+        "stop" : 1650199673280,
+        "duration" : 1
+      }
+    } ]
+  },
+  "1b56d5cad61736dbba19f0d9a2d4077e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "444db1079aca44b6",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'set'>.",
+      "time" : {
+        "start" : 1650199673318,
+        "stop" : 1650199673318,
+        "duration" : 0
+      }
+    } ]
+  },
+  "de6055a737444953479e4537ab0c5b60" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f8a89cca1f6496fd",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.",
+      "time" : {
+        "start" : 1650199673500,
+        "stop" : 1650199673501,
+        "duration" : 1
+      }
+    } ]
+  },
+  "b07afa7e2141e8af77483b6270172995" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f4377ee13cdddb05",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673435,
+        "stop" : 1650199673436,
+        "duration" : 1
+      }
+    } ]
+  },
+  "48f33d6794c91fbf6e7ab8aec2abc52b" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fceeb69e90f3d15a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673446,
+        "stop" : 1650199673447,
+        "duration" : 1
+      }
+    } ]
+  },
+  "e63516d7484e2ef588228832a0996005" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "966ba3633cfdfacf",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.",
+      "time" : {
+        "start" : 1650199673328,
+        "stop" : 1650199673328,
+        "duration" : 0
+      }
+    } ]
+  },
+  "4cbade266050fdd2d5bf17cd9d1bef41" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "55039b8b5f9770a9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673431,
+        "stop" : 1650199673432,
+        "duration" : 1
+      }
+    } ]
+  },
+  "92c801446b86cde21c079fd4ccf95faf" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c35dd0b034534a65",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673637,
+        "stop" : 1650199673641,
+        "duration" : 4
+      }
+    } ]
+  },
+  "d5f3f3a2bd698acff29c006f733d1b9d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7102cd8d242a1e88",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestTypeError: The request type should be Ask or Bid: WrongRequestType",
+      "time" : {
+        "start" : 1650199673688,
+        "stop" : 1650199673688,
+        "duration" : 0
+      }
+    } ]
+  },
+  "1afe05732b27c6408f431644fcd8c9fc" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9ee9884a499326dc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673449,
+        "stop" : 1650199673450,
+        "duration" : 1
+      }
+    } ]
+  },
+  "0a65c4ba9be524e349f158c2db7cec67" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e6578abba60ffad",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestAlreadyExistsError: The request is already exists: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.",
+      "time" : {
+        "start" : 1650199673375,
+        "stop" : 1650199673376,
+        "duration" : 1
+      }
+    } ]
+  },
+  "2c98a5cdc8269ac05d8304c60c579864" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fd2247b37908a6aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673371,
+        "stop" : 1650199673373,
+        "duration" : 2
+      }
+    } ]
+  },
+  "469d202ee2ab436facd9e9742a770a73" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2906b945645ada93",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673622,
+        "stop" : 1650199673625,
+        "duration" : 3
+      }
+    } ]
+  },
+  "9cd1cac8cdf48eeb5353a8011405e051" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "18a876761961cbc5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673366,
+        "stop" : 1650199673367,
+        "duration" : 1
+      }
+    } ]
+  },
+  "3dcb0faf3e24f1e0b25bbd1c7d325ce3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1842febbcb86612d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673647,
+        "stop" : 1650199673648,
+        "duration" : 1
+      }
+    } ]
+  },
+  "df27991e3e5bf9338d29631b7a137f80" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4cf0bc30c0ef589d",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestTypeError: The request type should be Ask or Bid: SomeWrongType",
+      "time" : {
+        "start" : 1650199673608,
+        "stop" : 1650199673608,
+        "duration" : 0
+      }
+    } ]
+  },
+  "8f9eee3c42949291d03303da945b0b8e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e6aefbd958f932a4",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume can not be lower than 1.",
+      "time" : {
+        "start" : 1650199673293,
+        "stop" : 1650199673294,
+        "duration" : 1
+      }
+    } ]
+  },
+  "05069ba9453fcf9ad81bcf4ee673d658" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "12a24af70816ddef",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673438,
+        "stop" : 1650199673439,
+        "duration" : 1
+      }
+    } ]
+  },
+  "67d3514cf08a19fa3526f24ff78b509c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "970eac56d9da194b",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be an instance of int or float, got <class 'list'>.",
+      "time" : {
+        "start" : 1650199673251,
+        "stop" : 1650199673252,
+        "duration" : 1
+      }
+    } ]
+  },
+  "3229b97e2a8ead52cfaea443d57b776f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f379e2c095eb30dd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673442,
+        "stop" : 1650199673443,
+        "duration" : 1
+      }
+    } ]
+  },
+  "737b7158019faa87c156c50344b20d4e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "afdecfe7af9f92a7",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume can not be lower than 1.",
+      "time" : {
+        "start" : 1650199673515,
+        "stop" : 1650199673516,
+        "duration" : 1
+      }
+    } ]
+  },
+  "79664fc816ab0fb99813467f731ad194" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "69399002156a844d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673347,
+        "stop" : 1650199673347,
+        "duration" : 0
+      }
+    } ]
+  },
+  "6957e28637d284531dc518b66e516ac1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "928f17198754b674",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673454,
+        "stop" : 1650199673455,
+        "duration" : 1
+      }
+    } ]
+  },
+  "9e8233c26beae8b760c3445e9ea9be18" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ee38b829cb74d004",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be an instance of int or float, got <class 'str'>.",
+      "time" : {
+        "start" : 1650199673246,
+        "stop" : 1650199673247,
+        "duration" : 1
+      }
+    } ]
+  },
+  "3a84ff06b501e117a30ebf1ca748dafd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b9e34915a73898dc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673643,
+        "stop" : 1650199673645,
+        "duration" : 2
+      }
+    } ]
+  },
+  "5f67f71e43c4baa0e367186e414cddc6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "88e057eec977d892",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestWasNotFoundError: The request with id \"0\" was not found.",
+      "time" : {
+        "start" : 1650199673672,
+        "stop" : 1650199673673,
+        "duration" : 1
+      }
+    } ]
+  },
+  "0562538221c131e88fb688399f29e4ec" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "33dbf6207cfc423c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673427,
+        "stop" : 1650199673428,
+        "duration" : 1
+      }
+    } ]
+  },
+  "2426464277a0e9e0d53c1a16eb65110a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e42dc54221bffef2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673632,
+        "stop" : 1650199673635,
+        "duration" : 3
+      }
+    } ]
+  },
+  "a90351a37b827f478dd547e9e3861899" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8c213310cff766f6",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestWasNotFoundError: The request with id \"1\" was not found.",
+      "time" : {
+        "start" : 1650199673582,
+        "stop" : 1650199673583,
+        "duration" : 1
+      }
+    } ]
+  },
+  "1fa93694bdc1e190d7bbb0e265c4cc55" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "992f9bbcd21c0547",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume can not be lower than 1.",
+      "time" : {
+        "start" : 1650199673523,
+        "stop" : 1650199673524,
+        "duration" : 1
+      }
+    } ]
+  },
+  "b87d2ee6a3ab6655ae27adf00ebf7aeb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2e038f26755645b1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673423,
+        "stop" : 1650199673424,
+        "duration" : 1
+      }
+    } ]
+  },
+  "f569c5cef68a9b6fc8ad8801e5f01eb3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c2892827de4a2533",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be over than 0.",
+      "time" : {
+        "start" : 1650199673484,
+        "stop" : 1650199673484,
+        "duration" : 0
+      }
+    } ]
+  },
+  "fd97cdaec0aac3c717a2bea592a884eb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d2856711fad5ed3e",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestWasNotFoundError: The request with id \"0\" was not found.",
+      "time" : {
+        "start" : 1650199673593,
+        "stop" : 1650199673593,
+        "duration" : 0
+      }
+    } ]
+  },
+  "4d496219f8e32b6327c8d402ed3730a4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a599b34ea87241d9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673362,
+        "stop" : 1650199673362,
+        "duration" : 0
+      }
+    } ]
+  },
+  "08648a21f5b0e2985610eb6e368efa9e" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "620c64a6b090ef25",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestError: The request must be an instance of the Request: {'id': 0, 'price': 100, 'volume': 5, 'type': 'Ask'}.",
+      "time" : {
+        "start" : 1650199673403,
+        "stop" : 1650199673404,
+        "duration" : 1
+      }
+    } ]
+  },
+  "4e8a8d94edfc5c2bbf44e5929c1ec707" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "8f1580b650583309",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTypeError: OrderBook.change_request_info() got an unexpected keyword argument 'type'",
+      "time" : {
+        "start" : 1650199673457,
+        "stop" : 1650199673458,
+        "duration" : 1
+      }
+    } ]
+  },
+  "2299dc3cdfe4458e59e8d828ea1ca2aa" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6e318543b40b493b",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be over than 0.",
+      "time" : {
+        "start" : 1650199673210,
+        "stop" : 1650199673211,
+        "duration" : 1
+      }
+    } ]
+  },
+  "190deefa643f658a7e5461e7187607cb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9209969f0d907083",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'str'>.",
+      "time" : {
+        "start" : 1650199673298,
+        "stop" : 1650199673298,
+        "duration" : 0
+      }
+    } ]
+  },
+  "7b67a77d8a7d30ae29dbbd10490e5b38" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "77528d0974bbdfb7",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestWasNotFoundError: The request with id \"1\" was not found.",
+      "time" : {
+        "start" : 1650199673659,
+        "stop" : 1650199673660,
+        "duration" : 1
+      }
+    } ]
+  },
+  "88f438c77f9be0986261923918d70cda" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "2fcc454cffb64c54",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673657,
+        "stop" : 1650199673657,
+        "duration" : 0
+      }
+    } ]
+  },
+  "cd36b668b4bb7660d3ffa392d549b345" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "99f15e5bc5dcfe11",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673575,
+        "stop" : 1650199673577,
+        "duration" : 2
+      }
+    } ]
+  },
+  "8687f39abd1645a45705f045aea9344d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "e4be032690d7abc3",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673209,
+        "stop" : 1650199673209,
+        "duration" : 0
+      }
+    } ]
+  },
+  "79c1038f5caf09eee6996868a8e21140" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "f9e0e109973ed39e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673627,
+        "stop" : 1650199673629,
+        "duration" : 2
+      }
+    } ]
+  },
+  "a6df2eaff0e59b4abff5ec711ed50eca" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "84f95448ae51565",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be an instance of int or float, got <class 'NoneType'>.",
+      "time" : {
+        "start" : 1650199673268,
+        "stop" : 1650199673269,
+        "duration" : 1
+      }
+    } ]
+  },
+  "9a5152050251c686ca72230b0b6ebf88" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5bfc92e425177252",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'NoneType'>.",
+      "time" : {
+        "start" : 1650199673323,
+        "stop" : 1650199673324,
+        "duration" : 1
+      }
+    } ]
+  },
+  "ea3dbe078f635e119840d08b944fcebb" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5294f880c7298fc4",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673343,
+        "stop" : 1650199673344,
+        "duration" : 1
+      }
+    } ]
+  },
+  "d2a38195e0a12103f0e7852324a4dee6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "c7a0bd6cfed2badb",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nValueError: Either price or volume should be specified",
+      "time" : {
+        "start" : 1650199673561,
+        "stop" : 1650199673561,
+        "duration" : 0
+      }
+    } ]
+  },
+  "5db40f49bb65681f2b4a22be79450d11" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1af3e693b3ec328c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673650,
+        "stop" : 1650199673651,
+        "duration" : 1
+      }
+    } ]
+  },
+  "2df6a99339bda2f228c72986b7ed9de9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "71abd8f5f09a7440",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be over than 0.",
+      "time" : {
+        "start" : 1650199673468,
+        "stop" : 1650199673469,
+        "duration" : 1
+      }
+    } ]
+  },
+  "b103118ada4527d7795da892ab872c52" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "83ee7ea3bd1d9f92",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be over than 0.",
+      "time" : {
+        "start" : 1650199673239,
+        "stop" : 1650199673239,
+        "duration" : 0
+      }
+    } ]
+  },
+  "c5c44edf5462f047449f3a4497d999a6" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "dd77776f01117801",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673203,
+        "stop" : 1650199673205,
+        "duration" : 2
+      }
+    } ]
+  },
+  "0d3d0ca1c323e8771c9f3eacdf69ddf4" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "bc3b9782f6f155ed",
+      "status" : "passed",
+      "time" : {
+        "start" : 1650199673358,
+        "stop" : 1650199673360,
+        "duration" : 2
+      }
+    } ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "uid" : "71abd8f5f09a7440",
+  "name" : "test_change_wrong_new_price[0]",
+  "fullName" : "TestOrderBook.test_change_request#test_change_wrong_new_price",
+  "historyId" : "2df6a99339bda2f228c72986b7ed9de9",
+  "time" : {
+    "start" : 1650199673468,
+    "stop" : 1650199673469,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of changing a request price to an incorrect value in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: RequestPriceError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of changing a request price to an incorrect value in the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Change request\n        E: RequestPriceError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be over than 0.",
+  "statusTrace" : "ValueError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD5C6DD0>\nnew_price = 0\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestPriceError, strict=True)\n    @pytest.mark.parametrize('new_price', [\n        0,\n        -Defaults.price,\n        str(Defaults.price),\n    ])\n    def test_change_wrong_new_price(order_book, new_price):\n        \"\"\"\n        Test checks the possibility of changing a request price to an incorrect value in the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Change request\n                E: RequestPriceError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id, price=new_price)\n\nTestOrderBook\\test_change_request.py:165: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:214: in change_request_info\n    request.price = price\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.AskRequest object at 0x0000029EBD5C4D90>\nvalue = 0\n\n    @price.setter\n    def price(self, value: PRICE_TYPE) -> None:\n        \"\"\"\n        Request price setter\n    \n        :param value: New request price\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new price (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The price should be an instance of int or float\n        if not isinstance(value, PRICE_TYPE):\n            LOGGER.error('The new price is not an int or float instance (%s)' % type(value))\n            raise RequestPriceError(\n                f'The price should be an instance of int or float, got {type(value)}.') from TypeError\n    \n        # The price should be over than 0\n        if value <= 0:\n            LOGGER.error('The new price is lower than 0 (%s)' % value)\n>           raise RequestPriceError('The price should be over than 0.') from ValueError\nE           Tests.OrderBook.RequestPriceError: The price should be over than 0.\n\nOrderBook\\Requests.py:72: RequestPriceError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673468,
+      "stop" : 1650199673468,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of changing a request price to an incorrect value in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: RequestPriceError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestPriceError: The price should be over than 0.",
+    "statusTrace" : "ValueError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD5C6DD0>\nnew_price = 0\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestPriceError, strict=True)\n    @pytest.mark.parametrize('new_price', [\n        0,\n        -Defaults.price,\n        str(Defaults.price),\n    ])\n    def test_change_wrong_new_price(order_book, new_price):\n        \"\"\"\n        Test checks the possibility of changing a request price to an incorrect value in the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Change request\n                E: RequestPriceError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id, price=new_price)\n\nTestOrderBook\\test_change_request.py:165: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:214: in change_request_info\n    request.price = price\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.AskRequest object at 0x0000029EBD5C4D90>\nvalue = 0\n\n    @price.setter\n    def price(self, value: PRICE_TYPE) -> None:\n        \"\"\"\n        Request price setter\n    \n        :param value: New request price\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new price (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The price should be an instance of int or float\n        if not isinstance(value, PRICE_TYPE):\n            LOGGER.error('The new price is not an int or float instance (%s)' % type(value))\n            raise RequestPriceError(\n                f'The price should be an instance of int or float, got {type(value)}.') from TypeError\n    \n        # The price should be over than 0\n        if value <= 0:\n            LOGGER.error('The new price is lower than 0 (%s)' % value)\n>           raise RequestPriceError('The price should be over than 0.') from ValueError\nE           Tests.OrderBook.RequestPriceError: The price should be over than 0.\n\nOrderBook\\Requests.py:72: RequestPriceError",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673468,
+        "stop" : 1650199673469,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "596ad9157853d571",
+        "name" : "Request",
+        "source" : "596ad9157853d571.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673469,
+        "stop" : 1650199673469,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Change request",
+      "time" : {
+        "start" : 1650199673469,
+        "stop" : 1650199673469,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestPriceError: The price should be over than 0.\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_change_request.py\", line 165, in test_change_wrong_new_price\n    order_book.change_request_info(request.id, price=new_price)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 214, in change_request_info\n    request.price = price\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\Requests.py\", line 72, in price\n    raise RequestPriceError('The price should be over than 0.') from ValueError\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "60a3bcd33cc40fb2",
+      "name" : "log",
+      "source" : "60a3bcd33cc40fb2.txt",
+      "type" : "text/plain",
+      "size" : 1276
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 2,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673482,
+      "stop" : 1650199673482,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestPriceError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_change_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_change_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "new_price",
+    "value" : "0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestPriceError'>, strict=True)" ]
+  },
+  "source" : "71abd8f5f09a7440.json",
+  "parameterValues" : [ "0" ]
+}

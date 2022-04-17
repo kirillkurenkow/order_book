@@ -2,6 +2,11 @@
 
 How to work with OrderBook you can read [here](/Tests/OrderBook).
 
+You can view report example without running tests in [Tests](/Tests)
+```cmd
+allure open reports-example
+```
+
 ## How to run tests
 ### Install requirements
 You can install requirements by executing this from project directory

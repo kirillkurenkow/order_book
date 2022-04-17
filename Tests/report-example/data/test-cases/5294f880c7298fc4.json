@@ -1,0 +1,151 @@
+{
+  "uid" : "5294f880c7298fc4",
+  "name" : "test_add_multiple_requests[tuple]",
+  "fullName" : "TestOrderBook.test_add_mutiple_requests#test_add_multiple_requests",
+  "historyId" : "ea3dbe078f635e119840d08b944fcebb",
+  "time" : {
+    "start" : 1650199673343,
+    "stop" : 1650199673344,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of adding multiple requests to the OrderBook\n\n    Steps:\n        1. Generate requests\n            E: Requests generated successfully\n        2. Add requests\n            E: Requests added successfully\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of adding multiple requests to the OrderBook\n\nSteps:\n    1. Generate requests\n        E: Requests generated successfully\n    2. Add requests\n        E: Requests added successfully\n</code></pre>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673343,
+      "stop" : 1650199673343,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of adding multiple requests to the OrderBook\n\n    Steps:\n        1. Generate requests\n            E: Requests generated successfully\n        2. Add requests\n            E: Requests added successfully\n    ",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Generate requests",
+      "time" : {
+        "start" : 1650199673343,
+        "stop" : 1650199673344,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "bff411ddae4ea96b",
+        "name" : "Requests",
+        "source" : "bff411ddae4ea96b.json",
+        "type" : "application/json",
+        "size" : 192
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add requests",
+      "time" : {
+        "start" : 1650199673344,
+        "stop" : 1650199673344,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "fa743af64208b18a",
+      "name" : "log",
+      "source" : "fa743af64208b18a.txt",
+      "type" : "text/plain",
+      "size" : 1515
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 2,
+    "stepsCount" : 2,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673344,
+      "stop" : 1650199673344,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "tag",
+    "value" : "positive"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_mutiple_requests"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_add_mutiple_requests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "requests_type",
+    "value" : "<class 'tuple'>"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "positive" ]
+  },
+  "source" : "5294f880c7298fc4.json",
+  "parameterValues" : [ "<class 'tuple'>" ]
+}

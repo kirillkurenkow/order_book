@@ -1,0 +1,4 @@
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (100) for the request with id "7"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (5) for the request with id "7"
+[2022-04-17 15:47:53] LINE_41: __init__: A new request was created: {'id': 7, 'price': 100, 'volume': 5, 'type': ''}

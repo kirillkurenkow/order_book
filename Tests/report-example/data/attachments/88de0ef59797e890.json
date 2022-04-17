@@ -1,0 +1,13 @@
+{
+    "Asks": [
+        {
+            "price": 110,
+            "volume": 5
+        },
+        {
+            "price": 100,
+            "volume": 95
+        }
+    ],
+    "Bids": []
+}

@@ -1,0 +1,178 @@
+{
+  "uid" : "7adacd3fb6381c91",
+  "name" : "test_add_request_with_existing_id",
+  "fullName" : "TestOrderBook.test_add_request#test_add_request_with_existing_id",
+  "historyId" : "ef460bab3b56cc9c3b99dbf987f14fa9",
+  "time" : {
+    "start" : 1650199673387,
+    "stop" : 1650199673388,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of adding a request with existing id to the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Add request with the same id\n            E: Request not added\n            E: RequestAlreadyExistsError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of adding a request with existing id to the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Add request with the same id\n        E: Request not added\n        E: RequestAlreadyExistsError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestAlreadyExistsError: The request with id \"0\" is already exists.",
+  "statusTrace" : "order_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD59DFF0>\n\n    @pytest.mark.negative\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.xfail(raises=RequestAlreadyExistsError, strict=True)\n    def test_add_request_with_existing_id(order_book):\n        \"\"\"\n        Test checks the possibility of adding a request with existing id to the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Add request with the same id\n                E: Request not added\n                E: RequestAlreadyExistsError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n            request_with_the_same_id = BidRequest(Defaults.price, Defaults.volume)\n            request_with_the_same_id._id = request.id\n            attach_dict_to_report(request_with_the_same_id.as_dict, 'Request with the same id')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Add request with the same id'):\n>           order_book.add_request(request_with_the_same_id)\n\nTestOrderBook\\test_add_request.py:99: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD59DFF0>\nrequest = <Tests.OrderBook.Requests.BidRequest object at 0x0000029EBD59C430>\n\n    def add_request(self, request: Request) -> None:\n        \"\"\"\n        Method for adding a new request to the requests list\n    \n        :param request: Request object\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug('Trying to add a new request: %s' % str(request))\n    \n        # The request must be an instance of the Request\n        if not isinstance(request, Request):\n            LOGGER.error('The request is not an instance of the Request (%s)' % type(request))\n            raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError\n    \n        # The request must not exist in the requests list\n        if request in self.__requests[request.type]:\n            LOGGER.warning('The request is already exists')\n            raise RequestAlreadyExistsError(f'The request is already exists: {request}.')\n    \n        # The request with the same id must not exist in the requests list\n        if self._get_request(request.id, raise_if_not_found=False) is not None:\n            LOGGER.error('The request with id \"%s\" is already exists' % request.id)\n>           raise RequestAlreadyExistsError(f'The request with id \"{request.id}\" is already exists.')\nE           Tests.OrderBook.RequestAlreadyExistsError: The request with id \"0\" is already exists.\n\nOrderBook\\OrderBook.py:98: RequestAlreadyExistsError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673387,
+      "stop" : 1650199673387,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of adding a request with existing id to the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Add request with the same id\n            E: Request not added\n            E: RequestAlreadyExistsError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestAlreadyExistsError: The request with id \"0\" is already exists.",
+    "statusTrace" : "order_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD59DFF0>\n\n    @pytest.mark.negative\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.xfail(raises=RequestAlreadyExistsError, strict=True)\n    def test_add_request_with_existing_id(order_book):\n        \"\"\"\n        Test checks the possibility of adding a request with existing id to the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Add request with the same id\n                E: Request not added\n                E: RequestAlreadyExistsError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n            request_with_the_same_id = BidRequest(Defaults.price, Defaults.volume)\n            request_with_the_same_id._id = request.id\n            attach_dict_to_report(request_with_the_same_id.as_dict, 'Request with the same id')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Add request with the same id'):\n>           order_book.add_request(request_with_the_same_id)\n\nTestOrderBook\\test_add_request.py:99: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD59DFF0>\nrequest = <Tests.OrderBook.Requests.BidRequest object at 0x0000029EBD59C430>\n\n    def add_request(self, request: Request) -> None:\n        \"\"\"\n        Method for adding a new request to the requests list\n    \n        :param request: Request object\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug('Trying to add a new request: %s' % str(request))\n    \n        # The request must be an instance of the Request\n        if not isinstance(request, Request):\n            LOGGER.error('The request is not an instance of the Request (%s)' % type(request))\n            raise RequestError(f'The request must be an instance of the Request: {request}.') from TypeError\n    \n        # The request must not exist in the requests list\n        if request in self.__requests[request.type]:\n            LOGGER.warning('The request is already exists')\n            raise RequestAlreadyExistsError(f'The request is already exists: {request}.')\n    \n        # The request with the same id must not exist in the requests list\n        if self._get_request(request.id, raise_if_not_found=False) is not None:\n            LOGGER.error('The request with id \"%s\" is already exists' % request.id)\n>           raise RequestAlreadyExistsError(f'The request with id \"{request.id}\" is already exists.')\nE           Tests.OrderBook.RequestAlreadyExistsError: The request with id \"0\" is already exists.\n\nOrderBook\\OrderBook.py:98: RequestAlreadyExistsError",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673387,
+        "stop" : 1650199673388,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9c010fe5d833e341",
+        "name" : "Request",
+        "source" : "9c010fe5d833e341.json",
+        "type" : "application/json",
+        "size" : 69
+      }, {
+        "uid" : "219a5d97ba4339b7",
+        "name" : "Request with the same id",
+        "source" : "219a5d97ba4339b7.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 2,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673388,
+        "stop" : 1650199673388,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Add request with the same id",
+      "time" : {
+        "start" : 1650199673388,
+        "stop" : 1650199673388,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestAlreadyExistsError: The request with id \"0\" is already exists.\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_add_request.py\", line 99, in test_add_request_with_existing_id\n    order_book.add_request(request_with_the_same_id)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 98, in add_request\n    raise RequestAlreadyExistsError(f'The request with id \"{request.id}\" is already exists.')\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "1c8dfe45268065dd",
+      "name" : "log",
+      "source" : "1c8dfe45268065dd.txt",
+      "type" : "text/plain",
+      "size" : 1518
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 3,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673392,
+      "stop" : 1650199673392,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestAlreadyExistsError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_add_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestAlreadyExistsError'>, strict=True)" ]
+  },
+  "source" : "7adacd3fb6381c91.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,45 @@
+{
+    "Asks": [],
+    "Bids": [
+        {
+            "price": 100,
+            "volume": 5
+        },
+        {
+            "price": 101,
+            "volume": 5
+        },
+        {
+            "price": 102,
+            "volume": 5
+        },
+        {
+            "price": 103,
+            "volume": 5
+        },
+        {
+            "price": 104,
+            "volume": 5
+        },
+        {
+            "price": 105,
+            "volume": 5
+        },
+        {
+            "price": 106,
+            "volume": 5
+        },
+        {
+            "price": 107,
+            "volume": 5
+        },
+        {
+            "price": 108,
+            "volume": 5
+        },
+        {
+            "price": 109,
+            "volume": 5
+        }
+    ]
+}

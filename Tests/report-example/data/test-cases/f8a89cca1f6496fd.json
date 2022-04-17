@@ -1,0 +1,175 @@
+{
+  "uid" : "f8a89cca1f6496fd",
+  "name" : "test_change_wrong_new_volume[5.0]",
+  "fullName" : "TestOrderBook.test_change_request#test_change_wrong_new_volume",
+  "historyId" : "de6055a737444953479e4537ab0c5b60",
+  "time" : {
+    "start" : 1650199673500,
+    "stop" : 1650199673501,
+    "duration" : 1
+  },
+  "description" : "\n    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: RequestVolumeError raised\n    ",
+  "descriptionHtml" : "<pre><code>Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n\nSteps:\n    1. Generate request\n        E: Request generated successfully\n    2. Add request\n        E: Request added successfully\n    3. Change request\n        E: RequestVolumeError raised\n</code></pre>\n",
+  "status" : "skipped",
+  "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.",
+  "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD2C70D0>\nnew_volume = 5.0\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestVolumeError, strict=True)\n    @pytest.mark.parametrize('new_volume', [\n        float(Defaults.volume),\n        0,\n        -Defaults.volume,\n        str(Defaults.volume),\n    ])\n    def test_change_wrong_new_volume(order_book, new_volume):\n        \"\"\"\n        Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Change request\n                E: RequestVolumeError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id, volume=new_volume)\n\nTestOrderBook\\test_change_request.py:195: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:217: in change_request_info\n    request.volume = volume\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.AskRequest object at 0x0000029EBC7FD480>\nvalue = 5.0\n\n    @volume.setter\n    def volume(self, value) -> None:\n        \"\"\"\n        Request volume setter\n    \n        :param value: New request volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The Volume should be an instance of int\n        if not isinstance(value, int):\n            LOGGER.error('The new volume is not an int instance (%s)' % type(value))\n>           raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\nE           Tests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.\n\nOrderBook\\Requests.py:100: RequestVolumeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "order_book",
+    "time" : {
+      "start" : 1650199673500,
+      "stop" : 1650199673500,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "\n    Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n\n    Steps:\n        1. Generate request\n            E: Request generated successfully\n        2. Add request\n            E: Request added successfully\n        3. Change request\n            E: RequestVolumeError raised\n    ",
+    "status" : "skipped",
+    "statusMessage" : "XFAIL\n\nTests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.",
+    "statusTrace" : "TypeError\n\nThe above exception was the direct cause of the following exception:\n\norder_book = <Tests.OrderBook.OrderBook.OrderBook object at 0x0000029EBD2C70D0>\nnew_volume = 5.0\n\n    @severity(severity_level.CRITICAL)\n    @pytest.mark.negative\n    @pytest.mark.xfail(raises=RequestVolumeError, strict=True)\n    @pytest.mark.parametrize('new_volume', [\n        float(Defaults.volume),\n        0,\n        -Defaults.volume,\n        str(Defaults.volume),\n    ])\n    def test_change_wrong_new_volume(order_book, new_volume):\n        \"\"\"\n        Test checks the possibility of changing a request volume to an incorrect value in the OrderBook\n    \n        Steps:\n            1. Generate request\n                E: Request generated successfully\n            2. Add request\n                E: Request added successfully\n            3. Change request\n                E: RequestVolumeError raised\n        \"\"\"\n        with step('Generate request'):\n            request = AskRequest(Defaults.price, Defaults.volume)\n            attach_dict_to_report(request.as_dict, 'Request')\n        with step('Add request'):\n            order_book.add_request(request)\n        with step('Change request'):\n>           order_book.change_request_info(request.id, volume=new_volume)\n\nTestOrderBook\\test_change_request.py:195: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nOrderBook\\OrderBook.py:217: in change_request_info\n    request.volume = volume\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <Tests.OrderBook.Requests.AskRequest object at 0x0000029EBC7FD480>\nvalue = 5.0\n\n    @volume.setter\n    def volume(self, value) -> None:\n        \"\"\"\n        Request volume setter\n    \n        :param value: New request volume\n    \n        :return: None\n        \"\"\"\n        LOGGER.debug(f'Trying to set a new volume (%s) for the request with id \"%s\"' % (value, self.id))\n    \n        # The Volume should be an instance of int\n        if not isinstance(value, int):\n            LOGGER.error('The new volume is not an int instance (%s)' % type(value))\n>           raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\nE           Tests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.\n\nOrderBook\\Requests.py:100: RequestVolumeError",
+    "steps" : [ {
+      "name" : "Generate request",
+      "time" : {
+        "start" : 1650199673500,
+        "stop" : 1650199673501,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "116374d20c1a2704",
+        "name" : "Request",
+        "source" : "116374d20c1a2704.json",
+        "type" : "application/json",
+        "size" : 69
+      } ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 1,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Add request",
+      "time" : {
+        "start" : 1650199673501,
+        "stop" : 1650199673501,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Change request",
+      "time" : {
+        "start" : 1650199673501,
+        "stop" : 1650199673501,
+        "duration" : 0
+      },
+      "status" : "broken",
+      "statusMessage" : "Tests.OrderBook.RequestVolumeError: A volume should be an instance of int, got <class 'float'>.\n",
+      "statusTrace" : "  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\TestOrderBook\\test_change_request.py\", line 195, in test_change_wrong_new_volume\n    order_book.change_request_info(request.id, volume=new_volume)\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\OrderBook.py\", line 217, in change_request_info\n    request.volume = volume\n  File \"C:\\Users\\Kirill\\Desktop\\Main\\Projects\\GitHub\\order_book\\Tests\\OrderBook\\Requests.py\", line 100, in volume\n    raise RequestVolumeError(f'A volume should be an instance of int, got {type(value)}.') from TypeError\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 0,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "2bd2047ca4baeb49",
+      "name" : "log",
+      "source" : "2bd2047ca4baeb49.txt",
+      "type" : "text/plain",
+      "size" : 1304
+    } ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 2,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "order_book::0",
+    "time" : {
+      "start" : 1650199673513,
+      "stop" : 1650199673513,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "tag",
+    "value" : "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestVolumeError'>, strict=True)"
+  }, {
+    "name" : "tag",
+    "value" : "negative"
+  }, {
+    "name" : "parentSuite",
+    "value" : "TestOrderBook"
+  }, {
+    "name" : "suite",
+    "value" : "test_change_request"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-G2TA214"
+  }, {
+    "name" : "thread",
+    "value" : "13036-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "TestOrderBook.test_change_request"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "new_volume",
+    "value" : "5.0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "negative", "@pytest.mark.xfail(raises=<class 'Tests.OrderBook.RequestVolumeError'>, strict=True)" ]
+  },
+  "source" : "f8a89cca1f6496fd.json",
+  "parameterValues" : [ "5.0" ]
+}

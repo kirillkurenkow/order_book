@@ -1,0 +1,681 @@
+[ {
+  "uid" : "be3098a3e124c2fc",
+  "name" : "test_get_request_info[BidRequest]",
+  "time" : {
+    "start" : 1650199673579,
+    "stop" : 1650199673580,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "b9e34915a73898dc",
+  "name" : "test_snapshot_prices_order_bid",
+  "time" : {
+    "start" : 1650199673643,
+    "stop" : 1650199673645,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "55039b8b5f9770a9",
+  "name" : "test_change_request[90-4-BidRequest]",
+  "time" : {
+    "start" : 1650199673431,
+    "stop" : 1650199673432,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "f8a89cca1f6496fd",
+  "name" : "test_change_wrong_new_volume[5.0]",
+  "time" : {
+    "start" : 1650199673500,
+    "stop" : 1650199673501,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "2906b945645ada93",
+  "name" : "test_get_snapshot",
+  "time" : {
+    "start" : 1650199673622,
+    "stop" : 1650199673625,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "99f15e5bc5dcfe11",
+  "name" : "test_get_request_info[AskRequest]",
+  "time" : {
+    "start" : 1650199673575,
+    "stop" : 1650199673577,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "12a24af70816ddef",
+  "name" : "test_change_request[110-None-BidRequest]",
+  "time" : {
+    "start" : 1650199673438,
+    "stop" : 1650199673439,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "2cc17d1c5366a049",
+  "name" : "test_remove_request[AskRequest]",
+  "time" : {
+    "start" : 1650199673653,
+    "stop" : 1650199673655,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "e6aefbd958f932a4",
+  "name" : "test_zero_volume",
+  "time" : {
+    "start" : 1650199673293,
+    "stop" : 1650199673294,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "9d46f39fb7f00796",
+  "name" : "test_wrong_price_type[price2]",
+  "time" : {
+    "start" : 1650199673263,
+    "stop" : 1650199673264,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "f4377ee13cdddb05",
+  "name" : "test_change_request[110-None-AskRequest]",
+  "time" : {
+    "start" : 1650199673435,
+    "stop" : 1650199673436,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "444db1079aca44b6",
+  "name" : "test_wrong_volume_type[volume2]",
+  "time" : {
+    "start" : 1650199673318,
+    "stop" : 1650199673318,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "c35dd0b034534a65",
+  "name" : "test_snapshot_prices_order_ask",
+  "time" : {
+    "start" : 1650199673637,
+    "stop" : 1650199673641,
+    "duration" : 4
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "8f1580b650583309",
+  "name" : "test_change_request_type",
+  "time" : {
+    "start" : 1650199673457,
+    "stop" : 1650199673458,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "afdecfe7af9f92a7",
+  "name" : "test_change_wrong_new_volume[0]",
+  "time" : {
+    "start" : 1650199673515,
+    "stop" : 1650199673516,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "e42dc54221bffef2",
+  "name" : "test_snapshot_volume_counter[BidRequest-Bids]",
+  "time" : {
+    "start" : 1650199673632,
+    "stop" : 1650199673635,
+    "duration" : 3
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "77528d0974bbdfb7",
+  "name" : "test_remove_not_existing_request",
+  "time" : {
+    "start" : 1650199673659,
+    "stop" : 1650199673660,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "2e5f54b50d3d095f",
+  "name" : "test_add_not_a_request[{'id': 1, 'price': 100, 'volume': 5, 'type': 'Bid'}]",
+  "time" : {
+    "start" : 1650199673409,
+    "stop" : 1650199673409,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "7adacd3fb6381c91",
+  "name" : "test_add_request_with_existing_id",
+  "time" : {
+    "start" : 1650199673387,
+    "stop" : 1650199673388,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "ee38b829cb74d004",
+  "name" : "test_wrong_price_type[100]",
+  "time" : {
+    "start" : 1650199673246,
+    "stop" : 1650199673247,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "6e318543b40b493b",
+  "name" : "test_negative_price",
+  "time" : {
+    "start" : 1650199673210,
+    "stop" : 1650199673211,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "9b0e7a8f60861242",
+  "name" : "test_volume",
+  "time" : {
+    "start" : 1650199673279,
+    "stop" : 1650199673280,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "643e9ea9d8eb68ff",
+  "name" : "test_negative_volume",
+  "time" : {
+    "start" : 1650199673281,
+    "stop" : 1650199673281,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "f379e2c095eb30dd",
+  "name" : "test_change_request[None-6-AskRequest]",
+  "time" : {
+    "start" : 1650199673442,
+    "stop" : 1650199673443,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "444832579ab3a1de",
+  "name" : "test_change_wrong_new_price[100]",
+  "time" : {
+    "start" : 1650199673492,
+    "stop" : 1650199673493,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "d2856711fad5ed3e",
+  "name" : "test_get_not_existing_request_type_info",
+  "time" : {
+    "start" : 1650199673593,
+    "stop" : 1650199673593,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "f9e0e109973ed39e",
+  "name" : "test_snapshot_volume_counter[AskRequest-Asks]",
+  "time" : {
+    "start" : 1650199673627,
+    "stop" : 1650199673629,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "2e038f26755645b1",
+  "name" : "test_change_request[110-6-BidRequest]",
+  "time" : {
+    "start" : 1650199673423,
+    "stop" : 1650199673424,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "fceeb69e90f3d15a",
+  "name" : "test_change_request[None-6-BidRequest]",
+  "time" : {
+    "start" : 1650199673446,
+    "stop" : 1650199673447,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "c2892827de4a2533",
+  "name" : "test_change_wrong_new_price[-100]",
+  "time" : {
+    "start" : 1650199673484,
+    "stop" : 1650199673484,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "18a876761961cbc5",
+  "name" : "test_add_request[AskRequest]",
+  "time" : {
+    "start" : 1650199673366,
+    "stop" : 1650199673367,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "83ee7ea3bd1d9f92",
+  "name" : "test_zero_price",
+  "time" : {
+    "start" : 1650199673239,
+    "stop" : 1650199673239,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "fd2247b37908a6aa",
+  "name" : "test_add_request[BidRequest]",
+  "time" : {
+    "start" : 1650199673371,
+    "stop" : 1650199673373,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "928f17198754b674",
+  "name" : "test_change_same_values[BidRequest]",
+  "time" : {
+    "start" : 1650199673454,
+    "stop" : 1650199673455,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c6b7c2567e6284e2",
+  "name" : "test_change_request[110-6-AskRequest]",
+  "time" : {
+    "start" : 1650199673420,
+    "stop" : 1650199673421,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "71abd8f5f09a7440",
+  "name" : "test_change_wrong_new_price[0]",
+  "time" : {
+    "start" : 1650199673468,
+    "stop" : 1650199673469,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "5294f880c7298fc4",
+  "name" : "test_add_multiple_requests[tuple]",
+  "time" : {
+    "start" : 1650199673343,
+    "stop" : 1650199673344,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "9209969f0d907083",
+  "name" : "test_wrong_volume_type[5]",
+  "time" : {
+    "start" : 1650199673298,
+    "stop" : 1650199673298,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "c7a0bd6cfed2badb",
+  "name" : "test_change_nothing",
+  "time" : {
+    "start" : 1650199673561,
+    "stop" : 1650199673561,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "5bfc92e425177252",
+  "name" : "test_wrong_volume_type[None]",
+  "time" : {
+    "start" : 1650199673323,
+    "stop" : 1650199673324,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "69399002156a844d",
+  "name" : "test_add_multiple_requests[set]",
+  "time" : {
+    "start" : 1650199673347,
+    "stop" : 1650199673347,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "c22360991d66fd1",
+  "name" : "test_add_multiple_requests[list]",
+  "time" : {
+    "start" : 1650199673340,
+    "stop" : 1650199673341,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "861781ca536f3e8",
+  "name" : "test_added_list_not_changed",
+  "time" : {
+    "start" : 1650199673363,
+    "stop" : 1650199673364,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1842febbcb86612d",
+  "name" : "test_get_empty_snapshot",
+  "time" : {
+    "start" : 1650199673647,
+    "stop" : 1650199673648,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "966ba3633cfdfacf",
+  "name" : "test_wrong_volume_type[1.5]",
+  "time" : {
+    "start" : 1650199673328,
+    "stop" : 1650199673328,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "8cacc48fa34fd5fa",
+  "name" : "test_change_request_id",
+  "time" : {
+    "start" : 1650199673462,
+    "stop" : 1650199673463,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "e6578abba60ffad",
+  "name" : "test_add_existing_request",
+  "time" : {
+    "start" : 1650199673375,
+    "stop" : 1650199673376,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "231ff9c8512eb71e",
+  "name" : "test_change_wrong_new_volume[5]",
+  "time" : {
+    "start" : 1650199673531,
+    "stop" : 1650199673531,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "1af3e693b3ec328c",
+  "name" : "test_change_snapshot",
+  "time" : {
+    "start" : 1650199673650,
+    "stop" : 1650199673651,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "970eac56d9da194b",
+  "name" : "test_wrong_price_type[price1]",
+  "time" : {
+    "start" : 1650199673251,
+    "stop" : 1650199673252,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "84f95448ae51565",
+  "name" : "test_wrong_price_type[None]",
+  "time" : {
+    "start" : 1650199673268,
+    "stop" : 1650199673269,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "33dbf6207cfc423c",
+  "name" : "test_change_request[90-4-AskRequest]",
+  "time" : {
+    "start" : 1650199673427,
+    "stop" : 1650199673428,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "9ee9884a499326dc",
+  "name" : "test_change_same_values[AskRequest]",
+  "time" : {
+    "start" : 1650199673449,
+    "stop" : 1650199673450,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "bc3b9782f6f155ed",
+  "name" : "test_add_multiple_requests_all_errors",
+  "time" : {
+    "start" : 1650199673358,
+    "stop" : 1650199673360,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "3a80eb05a993e430",
+  "name" : "test_wrong_volume_type[volume1]",
+  "time" : {
+    "start" : 1650199673309,
+    "stop" : 1650199673309,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "992f9bbcd21c0547",
+  "name" : "test_change_wrong_new_volume[-5]",
+  "time" : {
+    "start" : 1650199673523,
+    "stop" : 1650199673524,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "620c64a6b090ef25",
+  "name" : "test_add_not_a_request[request_0]",
+  "time" : {
+    "start" : 1650199673403,
+    "stop" : 1650199673404,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "32fe9b7ea7d7b3b",
+  "name" : "test_price_int",
+  "time" : {
+    "start" : 1650199673207,
+    "stop" : 1650199673207,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "88e057eec977d892",
+  "name" : "test_remove_request_wrong_request_type",
+  "time" : {
+    "start" : 1650199673672,
+    "stop" : 1650199673673,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "8c213310cff766f6",
+  "name" : "test_get_not_existing_request_info",
+  "time" : {
+    "start" : 1650199673582,
+    "stop" : 1650199673583,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "dd77776f01117801",
+  "name" : "test_id_order",
+  "time" : {
+    "start" : 1650199673203,
+    "stop" : 1650199673205,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "a599b34ea87241d9",
+  "name" : "test_add_0_requests",
+  "time" : {
+    "start" : 1650199673362,
+    "stop" : 1650199673362,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "e4be032690d7abc3",
+  "name" : "test_price_float",
+  "time" : {
+    "start" : 1650199673209,
+    "stop" : 1650199673209,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "2fcc454cffb64c54",
+  "name" : "test_remove_request[BidRequest]",
+  "time" : {
+    "start" : 1650199673657,
+    "stop" : 1650199673657,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "4cf0bc30c0ef589d",
+  "name" : "test_get_request_info_wrong_request_type",
+  "time" : {
+    "start" : 1650199673608,
+    "stop" : 1650199673608,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "8fa7b71b7a7fac83",
+  "name" : "test_add_multiple_requests_with_errors",
+  "time" : {
+    "start" : 1650199673355,
+    "stop" : 1650199673357,
+    "duration" : 2
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "6425323c47844679",
+  "name" : "test_change_not_existing_request",
+  "time" : {
+    "start" : 1650199673545,
+    "stop" : 1650199673546,
+    "duration" : 1
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+}, {
+  "uid" : "7102cd8d242a1e88",
+  "name" : "test_remove_not_existing_request_type",
+  "time" : {
+    "start" : 1650199673688,
+    "stop" : 1650199673688,
+    "duration" : 0
+  },
+  "status" : "skipped",
+  "severity" : "critical"
+} ]

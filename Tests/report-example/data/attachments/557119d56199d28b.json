@@ -1,0 +1,14 @@
+[
+    {
+        "id": 23,
+        "price": 100,
+        "volume": 5,
+        "type": "Ask"
+    },
+    {
+        "id": 24,
+        "price": 100,
+        "volume": 5,
+        "type": "Bid"
+    }
+]

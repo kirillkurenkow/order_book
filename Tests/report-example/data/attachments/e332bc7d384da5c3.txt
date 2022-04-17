@@ -1,0 +1,4 @@
+[2022-04-17 15:47:53] LINE_61: price: Trying to set a new price (100) for the request with id "22"
+[2022-04-17 15:47:53] LINE_74: price: A new price was set successfully
+[2022-04-17 15:47:53] LINE_95: volume: Trying to set a new volume (1.5) for the request with id "22"
+[2022-04-17 15:47:53] LINE_99: volume: The new volume is not an int instance (<class 'float'>)

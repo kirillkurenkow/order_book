@@ -1,0 +1,3 @@
+[2022-04-17 15:47:53] LINE_252: get_snapshot: A new snapshot was created: {'Asks': [], 'Bids': []}
+[2022-04-17 15:47:53] LINE_54: validate: Trying to validate dict with schema "Snapshot"
+[2022-04-17 15:47:53] LINE_62: validate: Validation succeeded
