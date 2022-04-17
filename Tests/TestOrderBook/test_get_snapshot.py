@@ -21,9 +21,9 @@ from Tests.Source.Schema import (
 
 @severity(severity_level.BLOCKER)
 @pytest.mark.positive
-def test_get_snapshot(order_book):
+def test_get_snapshot_with_multiple_requests(order_book):
     """
-    Test checks the possibility of getting a snapshot from the OrderBook
+    Test checks the possibility of getting a snapshot with multiple requests from the OrderBook
 
     Steps:
         1. Generate requests
@@ -32,20 +32,52 @@ def test_get_snapshot(order_book):
             E: Requests added successfully
         3. Get snapshot
             E: Snapshot received successfully
-        4. Validate snapshot
+        4. Check prices
+            E: Prices are correct
+        5. Validate snapshot
             E: Validation succeeded
     """
     with step('Generate requests'):
-        request_ask = AskRequest(price=Defaults.price, volume=Defaults.volume)
-        attach_dict_to_report(request_ask.as_dict, 'Request ask')
-        request_bid = BidRequest(price=Defaults.price, volume=Defaults.volume)
-        attach_dict_to_report(request_bid.as_dict, 'Request bid')
+        price_diff = 10
+        default_prices_count = 10
+        requests = [AskRequest(Defaults.price, Defaults.volume + i) for i in range(default_prices_count)]
+        requests.append(AskRequest(Defaults.price + price_diff, Defaults.volume))
     with step('Add requests'):
-        order_book.add_request(request_ask)
-        order_book.add_request(request_bid)
+        order_book.add_requests(requests)
     with step('Get snapshot'):
         snapshot = order_book.get_snapshot()
         attach_dict_to_report(snapshot, 'Snapshot')
+    with step('Check prices'):
+        # Error messages
+        wrong_volume_error_message = 'Wrong volume for the price {} ({})'
+        wrong_price_error_message = 'Wrong price was found in the snapshot: {}'
+        price_was_not_found_error_message = 'Price {} was not found'
+
+        # Found price flags
+        default_price_found = False
+        changed_price_found = False
+
+        for price_info in snapshot['Asks']:
+            price = price_info['price']
+            if price == Defaults.price:
+                # Check volume for default price
+                expected_volume = sum(range(Defaults.volume, Defaults.volume + default_prices_count))
+                assert price_info['volume'] == expected_volume, wrong_volume_error_message.format(price, 'Ask')
+                default_price_found = True
+            elif price == Defaults.price + price_diff:
+                # Check volume for changed price
+                assert price_info['volume'] == Defaults.volume, wrong_volume_error_message.format(price, 'Ask')
+                changed_price_found = True
+            else:
+                # Raise exception if unknown price was found
+                raise AssertionError(wrong_price_error_message.format(price))
+
+        # Check all prices were found
+        assert default_price_found, price_was_not_found_error_message.format(Defaults.price)
+        assert changed_price_found, price_was_not_found_error_message.format(Defaults.price + price_diff)
+
+        # Check no prices were found in snapshot['Bids']
+        assert not snapshot['Bids'], 'There are prices in snapshot["Bids"]'
     with step('Validate snapshot'):
         validate(snapshot, OrderBookSchema.snapshot)
 
