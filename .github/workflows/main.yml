@@ -36,11 +36,10 @@ jobs:
         run: pytest --alluredir allure-results
       
       - name: Generate reports
+        working-directory: ./reports
         run: |
-          rm -rf /reports/
-          ls -g
-          ls -g /reports
-          allure generate /app/Tests/allure-results --clean -o /reports/allure-reports
+          rm -rf *
+          allure generate ../app/Tests/allure-results --clean -o allure-reports
       
       - name: Upload reports
         working-directory: ./reports
