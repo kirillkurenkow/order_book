@@ -20,11 +20,11 @@ jobs:
         run: pip install -r requirements.txt
       
       - name: Run tests
-        working-directory: $TESTS_DIR
-        run: pytest --alluredir $RESULTS_DIR
+        working-directory: ${{ env.TESTS_DIR }}
+        run: pytest --alluredir ${{ env.RESULTS_DIR }}
       
       - name: Generate reports
-        run: allure generate $RESULTS_DIR $REPORTS_DIR
+        run: allure generate ${{ env.RESULTS_DIR }} ${{ env.REPORTS_DIR }}
       
       - name: Upload reports
         working-directory: .
