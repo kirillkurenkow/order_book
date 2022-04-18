@@ -1,6 +1,8 @@
 name: Tests
-
 on: workflow_dispatch
+env:
+  RESULTS: "results"
+  REPORTS: "reports"
 
 jobs:
   run-tests:
@@ -17,4 +19,11 @@ jobs:
       
       - name: Run tests
         working-directory: ./Tests
-        run: pytest
+        run: pytest --alluredir ${{ RESULTS }}
+      
+      - name: Generate reports
+        run: allure generate ${{ REPORTS }} ${{ RESULTS }}
+      
+      - name: Upload reports
+        working-directory: ..
+        run: ls -g
