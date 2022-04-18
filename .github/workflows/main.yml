@@ -36,8 +36,16 @@ jobs:
         run: pytest --alluredir allure-results
       
       - name: Generate reports
-        working-directory: ./app/Tests
-        run: allure generate allure-results --clean -o allure-reports
+        run: |
+          rm -rf /reports/
+          ls -g
+          ls -g /reports
+          allure generate /app/Tests/allure-results --clean -o /reports/allure-reports
       
       - name: Upload reports
-        run: ls -g
+        working-directory: ./reports
+        run: |
+          git config --global user.name 'kirillkurenkow'
+          git config --global user.email 'kirillkurenkow@gmail.com'
+          git commit -am "Automated report"
+          git push
