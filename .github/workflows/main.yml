@@ -25,5 +25,5 @@ jobs:
         run: allure generate ${{ REPORTS }} ${{ RESULTS }}
       
       - name: Upload reports
-        working-directory: ..
+        working-directory: ./
         run: ls -g
