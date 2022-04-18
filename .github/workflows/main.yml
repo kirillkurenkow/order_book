@@ -1,18 +1,25 @@
 name: Tests
 on: workflow_dispatch
-env:
-  RESULTS_DIR: "results"
-  REPORTS_DIR: "reports"
-  TESTS_DIR: "./Tests"
-  
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v3
+      - name: Checout project
+        uses: actions/checkout@v3
+        with:
+          repository: kirillkurenkow/order_book
+          path: app
+      
+      - name: Checkout reports
+        uses: actions/checkout@v3
+        with:
+          repository: kirillkurenkow/kirillkurenkow.github.io
+          path: reports
+          
+      - name: Install python
+        uses: actions/setup-python@v3
         with:
           python-version: '3.10'
       
@@ -24,12 +31,12 @@ jobs:
           brew install allure
       
       - name: Run tests
-        working-directory: ${{ env.TESTS_DIR }}
-        run: pytest --alluredir ${{ env.RESULTS_DIR }}
+        working-directory: ./app/Tests
+        run: pytest --alluredir allure-results
       
       - name: Generate reports
-        run: allure generate ${{ env.RESULTS_DIR }} ${{ env.REPORTS_DIR }}
+        working-directory: ./app/Tests
+        run: allure generate allure-results --clean -o allure-reports
       
       - name: Upload reports
-        working-directory: .
         run: ls -g
