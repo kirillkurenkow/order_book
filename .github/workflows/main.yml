@@ -23,6 +23,11 @@ jobs:
         working-directory: ${{ env.TESTS_DIR }}
         run: pytest --alluredir ${{ env.RESULTS_DIR }}
       
+      - name: Install allure
+        run: |
+          apt-add-repository ppa:qameta/allure
+          apt-get install allure
+      
       - name: Generate reports
         run: allure generate ${{ env.RESULTS_DIR }} ${{ env.REPORTS_DIR }}
       
